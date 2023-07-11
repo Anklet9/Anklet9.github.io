@@ -81,13 +81,6 @@ body {
     padding-right: 20px;
 }
 
-.mypic {
-    width: 190px;
-    height: 190px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
 
 .container {
     max-width: 960px;
@@ -102,8 +95,8 @@ body {
 }
 
 .home-img {
-    width: 150px;
-    height: 150px;
+    width: 190px;
+        height: 190px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
@@ -117,8 +110,8 @@ body {
 }
 
 #user-detail-intro {
-    font-size: 18px;
-    color: #666;
+    font-size: 30px;
+    line-height: 21px;
 }
 
 /* About section styles */
@@ -152,6 +145,7 @@ body {
 #skills {
     padding: 50px 0;
     background-color: #f9f9f9;
+    margin-top: 2%;
 }
 
 #skills h2 {
@@ -282,7 +276,7 @@ body {
 .contact-list {
     list-style: none;
     padding: 0;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     margin-bottom: 20px;
 }
