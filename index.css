@@ -5,7 +5,6 @@ body {
     padding: 0;
     color: #333;
 }
-
 /* Navbar styles */
 #nav-menu {
     display: flex;
@@ -48,6 +47,8 @@ body {
 
 #nav-menu li a:hover {
     color: salmon;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 /* Home section styles */
@@ -96,7 +97,7 @@ body {
 
 .home-img {
     width: 190px;
-        height: 190px;
+    height: 190px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
@@ -141,7 +142,6 @@ body {
     line-height: 1.5;
 }
 
-/* Skills section styles */
 #skills {
     padding: 50px 0;
     background-color: #f9f9f9;
@@ -192,6 +192,10 @@ body {
     border-radius: 5%;
 }
 
+.skills-card:hover {
+    background-color: rgb(252, 175, 166);
+}
+
 .skills-card-img {
     width: 90px;
     height: 90px;
@@ -203,13 +207,17 @@ body {
     text-align: center;
 }
 
+/* Skills section styles */
+
 /* Projects section styles */
 #projects {
     padding: 50px 0;
 }
+
 #projects h2 {
     text-align: center;
 }
+
 .project-carousel {
     overflow: hidden;
     position: relative;
@@ -251,15 +259,20 @@ body {
 .project-control-btn:hover {
     background-color: salmon;
 }
-.project-deployed-link,.project-github-link{
+
+.project-deployed-link,
+.project-github-link {
     text-decoration: none;
     color: black;
 }
-.project-deployed-link:hover,.project-github-link:hover{
+
+.project-deployed-link:hover,
+.project-github-link:hover {
     text-decoration: underline;
     font-weight: 500;
     color: salmon;
 }
+
 /* Contact section styles */
 #contact {
     text-align: center;
@@ -276,7 +289,7 @@ body {
 .contact-list {
     list-style: none;
     padding: 0;
-    /* display: flex; */
+    display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
@@ -286,6 +299,10 @@ body {
 }
 
 .contact-list li a {
+    text-decoration: none;
+    color: #fa8072;
+    font-weight: 600;
+    font-size: 40px;
     margin-right: 20px;
     font-size: 2.5rem;
 }
@@ -297,9 +314,11 @@ body {
     padding: 50px 0;
     background-color: #fff;
 }
+
 #resume h2 {
     text-align: center;
 }
+
 .container {
     max-width: 960px;
     margin: 0 auto;
@@ -329,15 +348,56 @@ body {
     color: salmon;
 }
 
+/* github */
+#github {
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: flex-start;
+    transition: transform 0.5s ease;
+}
 
 
 
 
 
+#toggle {
+    position: relative;
+    display: block;
+    height: 25px;
+    width: 50px;
+    background: rgb(44, 43, 43);
+    cursor: pointer;
+    border-radius: 160px;
+    transition: 0.5s;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+        inset 0 8px 8px rgba(0, 0, 0, 0.1),
+        inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+}
+#toggle.active{
+    background:rgb(255, 255, 255);
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+                inset 0 8px 8px rgba(0, 0, 0, 0.1),
+                inset 0 -4px 4px rgba(0, 0, 0, 0.05);
+}
+#toggle .indicator {
+    position: absolute;
+    left: 0;
+    background: linear-gradient(to right, #ffffff, #242222);
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    transform: scale(0.9);
+    box-shadow: inset 0 8px 40px rgba(0, 0, 0, 0.5),
+            inset 0 4px 4px rgba(255,255,255, 0.222),
+            inset 0 -4px 4px rgba(255, 255, 255, 0.158);
+    transition: 0.5s;
+}
 
-
-
-
+#toggle.active .indicator{
+    left: 25px;
+    background: linear-gradient(to left, #242222,#ffffff);
+}
 
 
 
