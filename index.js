@@ -103,11 +103,82 @@ function scrollProjects(direction) {
   projectContainer.style.transform = `translateX(-${scrollPosition}px)`;
 }
 
+// const darkModeToggle = document.getElementById('dark-mode-toggle');
+// const darkbody = document.body;
+// const logo = document.querySelector('.logo');
+// const white = document.querySelector('.white');
+// const black = document.querySelector('.black');
+
+// darkModeToggle.addEventListener('change', function () {
+//   if (darkModeToggle.checked) {
+//     enableDarkMode();
+//   } else {
+//     disableDarkMode();
+//   }
+// });
+
+// function enableDarkMode() {
+//   darkbody.classList.add('dark-mode');
+//   localStorage.setItem('darkModeEnabled', true);
+//   toggleLogoImage(true); // Call the toggleLogoImage function with the darkModeEnabled parameter
+// }
+
+// function disableDarkMode() {
+//   darkbody.classList.remove('dark-mode');
+//   localStorage.setItem('darkModeEnabled', false);
+//   toggleLogoImage(false); // Call the toggleLogoImage function with the darkModeEnabled parameter
+// }
+
+// // Check if dark mode was previously enabled
+// const darkModeEnabled = localStorage.getItem('darkModeEnabled');
+
+// if (darkModeEnabled && darkModeEnabled === 'true') {
+//   enableDarkMode();
+// }
+
+// // Function to toggle the logo image
+// function toggleLogoImage(darkModeEnabled) {
+//   if (darkModeEnabled) {
+//     // Update the image display for dark mode
+//     black.style.display = 'none';
+//     white.style.display = 'block';
+//   } else {
+//     // Update the image display for light mode
+//     black.style.display = 'block';
+//     white.style.display = 'none';
+//   }
+// }
+
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const darkbody = document.body;
 const logo = document.querySelector('.logo');
 const white = document.querySelector('.white');
 const black = document.querySelector('.black');
+
+// Function to enable dark mode
+function enableDarkMode() {
+  darkbody.classList.add('dark-mode');
+  localStorage.setItem('darkModeEnabled', true);
+  toggleLogoImage(true); // Call the toggleLogoImage function with the darkModeEnabled parameter
+}
+
+// Function to disable dark mode
+function disableDarkMode() {
+  darkbody.classList.remove('dark-mode');
+  localStorage.setItem('darkModeEnabled', false);
+  toggleLogoImage(false); // Call the toggleLogoImage function with the darkModeEnabled parameter
+}
+
+// Check if dark mode is enabled on page load
+const darkModeEnabled = localStorage.getItem('darkModeEnabled');
+
+if (darkModeEnabled === 'true') {
+  darkModeToggle.checked = true; // Set the checkbox state to checked
+  enableDarkMode();
+} else {
+  darkModeToggle.checked = false; // Set the checkbox state to unchecked
+  disableDarkMode();
+}
 
 darkModeToggle.addEventListener('change', function () {
   if (darkModeToggle.checked) {
@@ -116,25 +187,6 @@ darkModeToggle.addEventListener('change', function () {
     disableDarkMode();
   }
 });
-
-function enableDarkMode() {
-  darkbody.classList.add('dark-mode');
-  localStorage.setItem('darkModeEnabled', true);
-  toggleLogoImage(true); // Call the toggleLogoImage function with the darkModeEnabled parameter
-}
-
-function disableDarkMode() {
-  darkbody.classList.remove('dark-mode');
-  localStorage.setItem('darkModeEnabled', false);
-  toggleLogoImage(false); // Call the toggleLogoImage function with the darkModeEnabled parameter
-}
-
-// Check if dark mode was previously enabled
-const darkModeEnabled = localStorage.getItem('darkModeEnabled');
-
-if (darkModeEnabled && darkModeEnabled === 'true') {
-  enableDarkMode();
-}
 
 // Function to toggle the logo image
 function toggleLogoImage(darkModeEnabled) {
@@ -148,4 +200,3 @@ function toggleLogoImage(darkModeEnabled) {
     white.style.display = 'none';
   }
 }
-

@@ -42,14 +42,14 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 28px;
+    font-weight: 400;
     transition: color 0.3s ease;
 }
 
 #nav-menu li a:hover {
-    color: salmon;
-    font-size: 22px;
-    font-weight: 700;
+    color: #19abbb;
+    
 }
 
 /* Home section styles */
@@ -211,6 +211,7 @@ body {
 /* Skills section styles */
 
 /* Projects section styles */
+
 #projects {
     padding: 50px 0;
 }
@@ -226,19 +227,38 @@ body {
 
 .project-card-container {
     display: flex;
+    height: 330px;
     grid-template-columns: repeat(2, 1fr);
     transition: transform 0.5s ease;
 }
 
 .project-card {
     flex: 0 0 429px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 19px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 50px 40px rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
     border-radius: 5%;
     margin-right: 20px;
 }
+.project-logo{
+    height: 100px;
+    margin-left:26%;
+}
+.project-logo2{
+    height: 100px;
+    margin-left:36%;
 
+}
+
+.project-links{
+    display: flex;
+    justify-content: space-between;
+}
+.project-links *{
+    font-size:  23px;
+    font-weight: 600;
+}
 .project-controls {
     display: flex;
     justify-content: center;
@@ -246,19 +266,20 @@ body {
 }
 
 .project-control-btn {
-    background-color: #333;
+    background-color: salmon;
     color: #fff;
     border: none;
     padding: 10px 20px;
     margin: 0 5px;
     font-size: 20px;
-    border-radius: 5%;
+    border-radius: 20%;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .project-control-btn:hover {
-    background-color: salmon;
+    background-color: #19abbb;
+        /* background-color: salmon; */
 }
 
 .project-deployed-link,
@@ -416,7 +437,7 @@ body {
 
 
 input[type="checkbox"]:checked+.slider {
-    background-color: black;
+    background-color: rgb(37, 36, 36);
     border:1px solid #f9f9f9;
 }
 
@@ -453,10 +474,19 @@ body.dark-mode {
     color: white;
 }
 
+
 .dark-mode #resume-button-2 {
     background-color: salmon;
 }
 .dark-mode #resume-button-2:hover{
+    background-color: whitesmoke;
+    color: salmon;
+}
+.dark-mode #prevBtn:hover{
+    background-color: whitesmoke;
+    color: salmon;
+}
+.dark-mode #nextBtn:hover{
     background-color: whitesmoke;
     color: salmon;
 }
@@ -483,7 +513,7 @@ body.dark-mode {
 }
 
 .dark-mode .project-card {
-    background-color: rgb(30, 41, 59);
+    background-color: rgb(62, 82, 114);
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
 }
 
