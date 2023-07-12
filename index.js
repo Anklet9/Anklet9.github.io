@@ -26,9 +26,19 @@ function smoothScroll(target, duration) {
   
   // Get all the navigation links
 const navLinks = document.querySelectorAll('#nav-menu a');
+// Navbar links smooth scroll
+navLinks.forEach(link => {
+  if (!link.classList.contains('resume') && !link.classList.contains('logo')) {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetSection = link.getAttribute('href');
+      smoothScroll(targetSection, 1000); // Set the duration (in milliseconds) as per your preference
+    });
+  }
+});
 
-// Add event listener to track scroll position
-window.addEventListener('scroll', function() {
+
+window.addEventListener('scroll', function () {
   const currentScroll = window.pageYOffset;
 
   // Iterate through each section to determine the active section
@@ -38,6 +48,21 @@ window.addEventListener('scroll', function() {
 
     // Check if the current scroll position is within the bounds of the section
     if (currentScroll >= sectionTop && currentScroll < sectionTop + sectionHeight) {
+      // Remove the 'active' class from all navigation links
+      navLinks.forEach(link => link.classList.remove('active'));
+
+      // Get the corresponding navigation link using the section ID
+      const targetNavLink = document.querySelector(`#nav-menu a[href="#${section.id}"]`);
+
+      // Add the 'active' class to the corresponding navigation link
+      targetNavLink.classList.add('active');
+    }
+
+    // Special case for the contact section
+    if (
+      currentScroll + window.innerHeight >= document.documentElement.scrollHeight &&
+      section.id === 'contact'
+    ) {
       // Remove the 'active' class from all navigation links
       navLinks.forEach(link => link.classList.remove('active'));
 
@@ -77,11 +102,50 @@ function scrollProjects(direction) {
   }
   projectContainer.style.transform = `translateX(-${scrollPosition}px)`;
 }
-let body = document.querySelectorAll('body');
-let toggle = document.getElementById("toggle");
-toggle.onclick = function(){
-  toggle.classList.toggle('active');
-  body.classList.toggle('active');
+
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const darkbody = document.body;
+const logo = document.querySelector('.logo');
+const white = document.querySelector('.white');
+const black = document.querySelector('.black');
+
+darkModeToggle.addEventListener('change', function () {
+  if (darkModeToggle.checked) {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
+  }
+});
+
+function enableDarkMode() {
+  darkbody.classList.add('dark-mode');
+  localStorage.setItem('darkModeEnabled', true);
+  toggleLogoImage(true); // Call the toggleLogoImage function with the darkModeEnabled parameter
 }
 
+function disableDarkMode() {
+  darkbody.classList.remove('dark-mode');
+  localStorage.setItem('darkModeEnabled', false);
+  toggleLogoImage(false); // Call the toggleLogoImage function with the darkModeEnabled parameter
+}
+
+// Check if dark mode was previously enabled
+const darkModeEnabled = localStorage.getItem('darkModeEnabled');
+
+if (darkModeEnabled && darkModeEnabled === 'true') {
+  enableDarkMode();
+}
+
+// Function to toggle the logo image
+function toggleLogoImage(darkModeEnabled) {
+  if (darkModeEnabled) {
+    // Update the image display for dark mode
+    black.style.display = 'none';
+    white.style.display = 'block';
+  } else {
+    // Update the image display for light mode
+    black.style.display = 'block';
+    white.style.display = 'none';
+  }
+}
 

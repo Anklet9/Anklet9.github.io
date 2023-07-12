@@ -5,6 +5,7 @@ body {
     padding: 0;
     color: #333;
 }
+
 /* Navbar styles */
 #nav-menu {
     display: flex;
@@ -67,7 +68,7 @@ body {
 #socials {
     list-style-type: none;
     display: flex;
-    margin-left: -8%;
+    margin-left: -16.2%;
     margin-top: 5%;
 }
 
@@ -184,7 +185,7 @@ body {
 .skills-card {
     text-align: center;
     padding: 20px;
-    background-color: #fff;
+    background-color: whitesmoke;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin: 10px;
     width: 200px;
@@ -192,9 +193,9 @@ body {
     border-radius: 5%;
 }
 
-.skills-card:hover {
-    background-color: rgb(252, 175, 166);
-}
+/* .skills-card:hover {
+    background-color:rgb(206, 191, 164);
+} */
 
 .skills-card-img {
     width: 90px;
@@ -268,7 +269,6 @@ body {
 
 .project-deployed-link:hover,
 .project-github-link:hover {
-    text-decoration: underline;
     font-weight: 500;
     color: salmon;
 }
@@ -332,15 +332,15 @@ body {
 .resume-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: salmon;
     color: #fff;
     text-decoration: none;
     margin-right: 10px;
-    border-radius: 5%;
+    border-radius: 10px;
 }
 
 .resume-button:hover {
-    background-color: salmon;
+    background-color: #19abbb;
 }
 
 #nav-menu .active {
@@ -359,83 +359,153 @@ body {
 
 
 
-
-
-#toggle {
+.switch {
     position: relative;
-    display: block;
-    height: 25px;
-    width: 50px;
-    background: rgb(44, 43, 43);
-    cursor: pointer;
-    border-radius: 160px;
-    transition: 0.5s;
-    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
-        inset 0 8px 8px rgba(0, 0, 0, 0.1),
-        inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 80px;
+    height: 40px;
 }
-#toggle.active{
-    background:rgb(255, 255, 255);
-    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
-                inset 0 8px 8px rgba(0, 0, 0, 0.1),
-                inset 0 -4px 4px rgba(0, 0, 0, 0.05);
+
+.switch input[type="checkbox"] {
+    display: none;
 }
-#toggle .indicator {
+
+.switch .slider {
     position: absolute;
+    top: 0;
     left: 0;
-    background: linear-gradient(to right, #ffffff, #242222);
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    background-color: rgb(255, 173, 0);
+    border-radius: 34px;
+    border: 1px solid rgb(247, 83, 83);
+    transition: background-color 0.1s ease;
+}
+
+.switch .slider:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    transform: translate(0, -50%);
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    transform: scale(0.9);
-    box-shadow: inset 0 8px 40px rgba(0, 0, 0, 0.5),
-            inset 0 4px 4px rgba(255,255,255, 0.222),
-            inset 0 -4px 4px rgba(255, 255, 255, 0.158);
-    transition: 0.5s;
+    transition: transform 1.5s ease;
+    background-image: url("https://cdn.discordapp.com/attachments/1128079625818480751/1128771992271728740/sun_1.png");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 5px gray(255, 0, 0, 0.5);
 }
 
-#toggle.active .indicator{
-    left: 25px;
-    background: linear-gradient(to left, #242222,#ffffff);
+.switch input:checked+.slider:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    background-image: url("https://cdn.discordapp.com/attachments/1128079625818480751/1128774104447713352/night.png");
+    background-size: cover;
+    background-position: center;
 }
 
 
+input[type="checkbox"]:checked+.slider {
+    background-color: black;
+    border:1px solid #f9f9f9;
+}
+
+input[type="checkbox"]:checked+.slider:before {
+    transform: translateX(10px);
+    transform: translateY(-16px);
+}
 
 
+/* Dark mode */
+body.dark-mode {
+    background-color: rgb(30, 41, 59);
+    color: #fff;
+}
 
+.dark-mode #nav-menu {
+    background-color: #000000;
+    color: #fff;
+}
 
+.dark-mode #nav-menu .active {
+    color: salmon;
+}
 
+.dark-mode #nav-menu li a {
+    color: #fff;
+}
 
+.dark-mode #nav-menu li a:hover {
+    color: salmon;
+}
 
+.dark-mode .about-description {
+    color: white;
+}
 
+.dark-mode #resume-button-2 {
+    background-color: salmon;
+}
+.dark-mode #resume-button-2:hover{
+    background-color: whitesmoke;
+    color: salmon;
+}
 
+.dark-mode #skills {
+    background-color: rgb(30, 41, 59);
+}
 
+.dark-mode .skills-card {
+    background-color: rgb(68, 94, 135);
+}
 
+.dark-mode .skills-card:hover {
+    background-color: white;
+    color: rgb(30, 41, 59);
+}
 
+.dark-mode #home {
+    background-color: rgb(30, 41, 59);
+}
 
+.dark-mode #projects {
+    background-color: rgb(30, 41, 59);
+}
 
+.dark-mode .project-card {
+    background-color: rgb(30, 41, 59);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+}
 
+.dark-mode .project-card:hover {
+    box-shadow: 0 6px 10px white;
+}
 
+.dark-mode #contact {
+    background-color: rgb(30, 41, 59);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.empty{
+    min-height: 200px;
+}
+.footer{
+    padding-top: 5%;
+    color: #868e96;
+    text-align: center;
+}
+.white{
+    display: none;
+}
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {

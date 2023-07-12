@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon"
-        href="https://cdn.discordapp.com/attachments/1128079625818480751/1128625021410087062/pngtree-initial-as-alphabet-logo-design-template-vector-png-image_7814782.png"
+        href="https://cdn.discordapp.com/attachments/1128079625818480751/1128756527050792970/Black.jpg"
         type="jpeg/png">
     <title>Aniket Sengar</title>
 </head>
@@ -15,9 +15,10 @@
     <!-- Navbar -->
     <nav id="nav-menu">
         <ul>
-            <li class="logo"><img
-                    src="https://cdn.discordapp.com/attachments/758572508911501315/1128075267525583000/pngtree-initial-as-alphabet-logo-design-template-vector-png-image_7814782-removebg-preview.png"
-                    alt=""></li>
+            <li class="logo">
+                <img class ="black"src="https://cdn.discordapp.com/attachments/1128079625818480751/1128756527050792970/Black.jpg" alt="">
+                <img class ="white"src="https://cdn.discordapp.com/attachments/1128079625818480751/1128756527742861512/White.jpg" alt="">
+            </li>
         </ul>
         <ul>
             <li><a href="#home" class="nav-link home">Home</a></li>
@@ -27,9 +28,10 @@
             <li><a href="#contact" class="nav-link contact">Contact</a></li>
             <li><a class="nav-link resume"href="https://drive.google.com/uc?id=13rcXQ-7SnT-Vi8PkHdWvAZJ4_3eyi8RK&export=download"        target="_blank" id="resume-button-1">Resume</a></li>
             <li>
-                <span id="toggle">
-                    <i class="indicator"></i>
-                </span>
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider"></span>
+                </label>
             </li>
         </ul>
     </nav>
@@ -72,10 +74,8 @@
             <div class="about-content">
                 <h2 class="section-title">About</h2>
                 <p class="about-description">Java backend developer with expertise in building full-stack projects,
-                    utilizing Java, Spring Boot, Hibernate, and
-                    restful APIs. Strong problem solving skills, attention to detail, and a proactive team player.
-                    Effective communicator
-                    and deadline-oriented professional committed to delivering high-quality software solutions.</p>
+                    utilizing HTML, CSS, JavaScript, Java, SpringBoot, Hibernate, and restful APIs and restful APIs. Strong problem solving skills, attention to detail, and a proactive team player.
+                    Effective communicator and deadline-oriented professional committed to delivering high-quality software solutions.</p>
             </div>
             <div class="resume-buttons">
                 <a class="resume-button" id="resume-button-2"
@@ -127,7 +127,7 @@
                 <div class="skills-card">
                     <img src="https://www.vectorlogo.zone/logos/mysql/mysql-official.svg" alt="Skill Icon"
                         class="skills-card-img">
-                    <h3 class="skills-card-name">MYSQL</h3>
+                    <h3 class="skills-card-name">MySQL</h3>
                 </div>
                 <div class="skills-card">
                     <img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="Skill Icon"
@@ -137,7 +137,7 @@
                 <div class="skills-card">
                     <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-vertical.svg" alt="Skill Icon"
                         class="skills-card-img">
-                    <h3 class="skills-card-name">Postgresql</h3>
+                    <h3 class="skills-card-name">PostgreSql</h3>
                 </div>
             </div>
             <h2>TOOLS</h2>
@@ -240,6 +240,7 @@
             </div>
         </div>
     </div>
+    
 
     <!-- Contact Section -->
     <section id="contact">
@@ -256,7 +257,10 @@
             </ul>
         </div>
     </section>
-
+    <div class="empty">
+        <!-- <p>MADE WITH </p> -->
+        <footer class="footer">Made with ❤️ by Aniket Sengar</footer>
+    </div>
     <!-- JavaScript -->
     <script src="index.js"></script>
 </body>
