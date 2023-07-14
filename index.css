@@ -49,7 +49,7 @@ body {
 
 #nav-menu li a:hover {
     color: #19abbb;
-    
+
 }
 
 /* Home section styles */
@@ -127,6 +127,7 @@ body {
     text-align: center;
 }
 
+/* Skills section styles */
 .section-title {
     font-size: 32px;
     font-weight: bold;
@@ -193,9 +194,6 @@ body {
     border-radius: 5%;
 }
 
-/* .skills-card:hover {
-    background-color:rgb(206, 191, 164);
-} */
 
 .skills-card-img {
     width: 90px;
@@ -207,8 +205,6 @@ body {
     font-weight: bold;
     text-align: center;
 }
-
-/* Skills section styles */
 
 /* Projects section styles */
 
@@ -241,24 +237,32 @@ body {
     border-radius: 5%;
     margin-right: 20px;
 }
-.project-logo{
-    height: 100px;
-    margin-left:26%;
+
+.project-card:hover {
+    background-color: whitesmoke;
 }
-.project-logo2{
+
+.project-logo {
     height: 100px;
-    margin-left:36%;
+    margin-left: 26%;
+}
+
+.project-logo2 {
+    height: 100px;
+    margin-left: 36%;
 
 }
 
-.project-links{
+.project-links {
     display: flex;
     justify-content: space-between;
 }
-.project-links *{
-    font-size:  23px;
+
+.project-links * {
+    font-size: 23px;
     font-weight: 600;
 }
+
 .project-controls {
     display: flex;
     justify-content: center;
@@ -269,17 +273,17 @@ body {
     background-color: salmon;
     color: #fff;
     border: none;
+    width: 120px;
     padding: 10px 20px;
     margin: 0 5px;
     font-size: 20px;
-    border-radius: 20%;
+    border-radius: 6%;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .project-control-btn:hover {
     background-color: #19abbb;
-        /* background-color: salmon; */
 }
 
 .project-deployed-link,
@@ -370,7 +374,11 @@ body {
 }
 
 /* github */
-#github {
+#github h2 {
+    text-align: center;
+}
+
+.github {
     display: flex;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
@@ -438,7 +446,7 @@ body {
 
 input[type="checkbox"]:checked+.slider {
     background-color: rgb(37, 36, 36);
-    border:1px solid #f9f9f9;
+    border: 1px solid #f9f9f9;
 }
 
 input[type="checkbox"]:checked+.slider:before {
@@ -478,15 +486,18 @@ body.dark-mode {
 .dark-mode #resume-button-2 {
     background-color: salmon;
 }
-.dark-mode #resume-button-2:hover{
+
+.dark-mode #resume-button-2:hover {
     background-color: whitesmoke;
     color: salmon;
 }
-.dark-mode #prevBtn:hover{
+
+.dark-mode #prevBtn:hover {
     background-color: whitesmoke;
     color: salmon;
 }
-.dark-mode #nextBtn:hover{
+
+.dark-mode #nextBtn:hover {
     background-color: whitesmoke;
     color: salmon;
 }
@@ -525,44 +536,142 @@ body.dark-mode {
     background-color: rgb(30, 41, 59);
 }
 
-.empty{
+.empty {
     min-height: 200px;
 }
-.footer{
+
+.footer {
     padding-top: 5%;
     color: #868e96;
     text-align: center;
 }
-.white{
+
+.white {
     display: none;
 }
 
 /* Responsive styles */
-@media screen and (max-width: 768px) {
-    .skills-card-container {
+
+@media all and (min-width: 768px) and (max-width:1023px) {
+
+    /* Navbar styles */
+    .logo img {
+        width: 80px;
+        height: 70px;
+    }
+
+    #nav-menu li a {
+        font-size: 20px;
+    }
+
+    /* Home section styles */
+    #home {
+        margin-top: 3rem;
+    }
+
+    .home-text {
         flex-direction: column;
         align-items: center;
+        text-align: center;
+    }
+
+    #socials {
+        margin-left: 0;
+        margin-top: 3%;
+    }
+
+    .home-img {
+        width: 140px;
+        height: 140px;
+    }
+
+    #user-detail-name {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    #user-detail-intro {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    /* About section styles */
+    .about-content {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    /* Skills section styles */
+    #skills {
+        margin-top: 3%;
+    }
+
+    .skills-card-container,
+    .skills-card-container1,
+    .skills-card-container2,
+    .skills-card-contain er3 {
+        display: flex;
+        grid-template-columns: repeat(1, 2fr);
     }
 
     .skills-card {
-        width: 100%;
+        margin: 10px;
     }
 
-    .project-card-container {
-        grid-template-columns: 1fr;
+    /* Projects section styles */
+    .project-carousel {
+        margin-left: 15%;
+        width: 70%;
+        justify-content: center;
+        overflow: hidden;
+        position: sticky;
     }
 
-    .project-card-container {
-        flex-wrap: wrap;
+    .project-card-container {margin-left: 10%;
+        display: flex;
+        gap: 10%;
+        grid-template-columns: repeat(1, 2fr);
+    }
+
+    .project-logo {
+        margin-left: 37%;
     }
 
     .project-card {
+        margin-left: -5.8%;
+    }
+
+    /* Contact section styles */
+    .contact-list li a {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+
+    /* Resume section styles */
+    .resume-buttons {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .resume-button {
         margin-right: 0;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Github section styles */
+    .github {
+        flex-wrap: wrap;
+        justify-content: center;
+        /* flex-direction: column; */
+    }
+
+    /* Footer styles */
+    .footer {
+        padding-top: 3%;
     }
 }
 
-@media screen and (max-width: 480px) {
+@media all and (min-width: 320px) and (max-width:767px) {
     .section-title {
         font-size: 28px;
     }

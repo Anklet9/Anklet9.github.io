@@ -24,7 +24,7 @@ function smoothScroll(target, duration) {
     requestAnimationFrame(scrollAnimation);
   }
   
-  // Get all the navigation links
+// Get all the navigation links
 const navLinks = document.querySelectorAll('#nav-menu a');
 // Navbar links smooth scroll
 navLinks.forEach(link => {
@@ -36,7 +36,6 @@ navLinks.forEach(link => {
     });
   }
 });
-
 
 window.addEventListener('scroll', function () {
   const currentScroll = window.pageYOffset;
@@ -75,23 +74,49 @@ window.addEventListener('scroll', function () {
   });
 });
 
-
-  
+// ---------------------------------PROJECT CARD SLIDER-------------------------
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const projectContainer = document.querySelector('.project-card-container');
 
 let scrollPosition = 0;
-const projectWidth = 320; // Adjust this value to match the width of each project card
-const projectsToShow = 3; // Adjust this value to change the number of projects displayed at a time
+let projectWidth;
+let projectsToShow;
+let maxScroll;
 
-prevBtn.addEventListener('click', scrollProjects.bind(null, 'prev'));
-nextBtn.addEventListener('click', scrollProjects.bind(null, 'next'));
+function setScrollParameters() {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth >= 1024) {
+    projectWidth = 320;
+    projectsToShow = 3;
+  } else if (screenWidth >= 768) {
+    projectWidth = 280;
+    projectsToShow = 1.83; // Show one full card and half of the next card
+  } else {
+    projectWidth = 240;
+    projectsToShow = 1.83;
+  }
+
+  const containerWidth = projectContainer.offsetWidth;
+  maxScroll = projectContainer.scrollWidth - containerWidth;
+  scrollPosition = Math.min(scrollPosition, maxScroll); // Adjust scroll position if it exceeds max scroll
+  projectContainer.style.transform = `translateX(-${scrollPosition}px)`;
+
+  // Disable next button when last card is reached
+  nextBtn.disabled = scrollPosition >= maxScroll - projectWidth;
+  // Change next button background color when disabled
+  nextBtn.style.backgroundColor = nextBtn.disabled ? 'gray' : '';
+
+  // Disable previous button when first card is reached
+  prevBtn.disabled = scrollPosition === 0;
+  // Change previous button background color when disabled
+  prevBtn.style.backgroundColor = prevBtn.disabled ? 'gray' : '';
+
+}
 
 function scrollProjects(direction) {
-  const containerWidth = projectContainer.offsetWidth;
-  const scrollAmount = projectWidth * projectsToShow;
-  const maxScroll = projectContainer.scrollWidth - containerWidth;
+  const scrollAmount = Math.floor(projectWidth * projectsToShow); // Round down to ensure only one card is visible
 
   if (direction === 'prev') {
     scrollPosition -= scrollAmount;
@@ -101,54 +126,24 @@ function scrollProjects(direction) {
     scrollPosition = Math.min(scrollPosition, maxScroll);
   }
   projectContainer.style.transform = `translateX(-${scrollPosition}px)`;
+  // Disable next button when last card is reached
+  nextBtn.disabled = scrollPosition >= maxScroll - projectWidth;
+  // Change next button background color when disabled
+  nextBtn.style.backgroundColor = nextBtn.disabled ? 'gray' : '';
+
+  // Disable previous button when first card is reached
+  prevBtn.disabled = scrollPosition === 0;
+  // Change previous button background color when disabled
+  prevBtn.style.backgroundColor = prevBtn.disabled ? 'gray' : '';
 }
 
-// const darkModeToggle = document.getElementById('dark-mode-toggle');
-// const darkbody = document.body;
-// const logo = document.querySelector('.logo');
-// const white = document.querySelector('.white');
-// const black = document.querySelector('.black');
+prevBtn.addEventListener('click', scrollProjects.bind(null, 'prev'));
+nextBtn.addEventListener('click', scrollProjects.bind(null, 'next'));
 
-// darkModeToggle.addEventListener('change', function () {
-//   if (darkModeToggle.checked) {
-//     enableDarkMode();
-//   } else {
-//     disableDarkMode();
-//   }
-// });
+window.addEventListener('resize', setScrollParameters);
+setScrollParameters();
 
-// function enableDarkMode() {
-//   darkbody.classList.add('dark-mode');
-//   localStorage.setItem('darkModeEnabled', true);
-//   toggleLogoImage(true); // Call the toggleLogoImage function with the darkModeEnabled parameter
-// }
-
-// function disableDarkMode() {
-//   darkbody.classList.remove('dark-mode');
-//   localStorage.setItem('darkModeEnabled', false);
-//   toggleLogoImage(false); // Call the toggleLogoImage function with the darkModeEnabled parameter
-// }
-
-// // Check if dark mode was previously enabled
-// const darkModeEnabled = localStorage.getItem('darkModeEnabled');
-
-// if (darkModeEnabled && darkModeEnabled === 'true') {
-//   enableDarkMode();
-// }
-
-// // Function to toggle the logo image
-// function toggleLogoImage(darkModeEnabled) {
-//   if (darkModeEnabled) {
-//     // Update the image display for dark mode
-//     black.style.display = 'none';
-//     white.style.display = 'block';
-//   } else {
-//     // Update the image display for light mode
-//     black.style.display = 'block';
-//     white.style.display = 'none';
-//   }
-// }
-
+// ---------------------------------DARK MODE-------------------------
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const darkbody = document.body;
 const logo = document.querySelector('.logo');
