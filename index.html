@@ -5,36 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Portfolio</title>
+    <link rel="shortcut icon"
+        href="https://cdn.discordapp.com/attachments/1128079625818480751/1128756527050792970/Black.jpg"
+        type="jpeg/png">
+    <title>Aniket Sengar</title>
 </head>
 
 <body>
     <!-- Navbar -->
     <nav id="nav-menu">
         <ul>
+            <li class="logo">
+                <img class ="black"src="https://cdn.discordapp.com/attachments/1128079625818480751/1128756527050792970/Black.jpg" alt="">
+                <img class ="white"src="https://cdn.discordapp.com/attachments/1128079625818480751/1128756527742861512/White.jpg" alt="">
+            </li>
+        </ul>
+        <ul>
             <li><a href="#home" class="nav-link home">Home</a></li>
             <li><a href="#about" class="nav-link about">About</a></li>
             <li><a href="#skills" class="nav-link skills">Skills</a></li>
             <li><a href="#projects" class="nav-link projects">Projects</a></li>
             <li><a href="#contact" class="nav-link contact">Contact</a></li>
+            <li><a class="nav-link resume"href="https://drive.google.com/uc?id=13rcXQ-7SnT-Vi8PkHdWvAZJ4_3eyi8RK&export=download"        target="_blank" id="resume-button-1">Resume</a></li>
             <li>
-                <a class="nav-link resume"
-                    href="https://drive.google.com/uc?id=13rcXQ-7SnT-Vi8PkHdWvAZJ4_3eyi8RK&export=download"
-                    id="resume-button-1">Resume</a>
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider"></span>
+                </label>
             </li>
         </ul>
     </nav>
 
-
     <!-- Home Section -->
     <section id="home">
         <div class="container">
-            <div class="profile">
-                <img src="WhatsApp Image 2023-04-04 at 16.10.25.jpg" alt="Professional Photo" class="home-img">
-                <h1 id="user-detail-name">Aniket Sengar</h1>
-                <p >Java Backend Developer</p>
+            <div class="home-content">
+                <div class="home-text">
+                    <div>
+                        <p style="font-size: 26px;line-height: 1px;font-weight: 600;">Hi, I'm</p>
+                        <p style="font-size: 40px;line-height: 1px;font-weight: 600;" id="user-detail-name">ANIKET
+                            SENGAR</p>
+                        <p id="backend_title">Java Backend Developer</p>
+                        <ul id="socials">
+                            <li><a href="mailto:aniketsengar73@gmail.com"><i class="fa-solid fa-envelope fa-bounce"
+                                        style="color: #fa8072;"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/aniket-sengar-5b2341194/"><i
+                                        class="fa-brands fa-linkedin fa-bounce" style="color: #fa8072;"></i></a></li>
+                            <li><a href="https://github.com/Anklet9"><i class="fa-brands fa-github fa-bounce"
+                                        style="color: #fa8072;"></i></a></li>
+                            <li><a href="tel:+919650726887"><i class="fa-solid fa-phone fa-bounce"
+                                        style="color: #fa8072;"></i></a></li>
+                        </ul>
+                    </div>
+                    <div id="mypic">
+                        <img src="https://cdn.discordapp.com/attachments/1128079625818480751/1128079758605951117/IMG_0383__1___1___1_-removebg-preview.png"
+                            alt="" class="home-img">
+                    </div>
+                </div>
             </div>
-        </div>
     </section>
 
     <!-- About Section -->
@@ -42,118 +71,111 @@
         <div class="container">
             <div class="about-content">
                 <h2 class="section-title">About</h2>
-                <p class="about-description" id="user-detail-intro">Java backend developer with expertise in building full-stack
-                    projects, utilizing HTML, CSS, JavaScript, Java, Spring Boot, Hibernate, and restful
-                    APIs. Strong problem solving skills, attention to detail, and a
-                    proactive team player. Effective communicator and
-                    deadline-oriented professional committed to delivering
-                    high-quality software solutions.</p>
+                <p class="about-description" id="user-detail-intro">Java backend developer with expertise in building full-stack projects utilizing HTML, CSS, JavaScript, Java, SpringBoot, Hibernate, and restful APIs. Strong problem solving skills, attention to detail, and a proactive team player.
+                    Effective communicator and deadline-oriented professional committed to delivering high-quality software solutions.</p>
             </div>
-
             <div class="resume-buttons">
-                <a class="resume-button" id="resume-button-2"
-                    href="https://drive.google.com/uc?id=13rcXQ-7SnT-Vi8PkHdWvAZJ4_3eyi8RK&export=download">Download
-                    Resume</a>
+                <a href="https://drive.google.com/uc?id=13rcXQ-7SnT-Vi8PkHdWvAZJ4_3eyi8RK&export=download"
+                    target="_blank" id="resume-button-2">Resume</a>
+                <!-- <a class="resume-button" id="resume-button-2"
+                    href="https://drive.google.com/uc?id=13rcXQ-7SnT-Vi8PkHdWvAZJ4_3eyi8RK&export=download"
+                    target="_blank" download>Download Resume</a> -->
             </div>
         </div>
     </section>
 
-    <!-- SkillSection -->
+    <!-- Skills Section -->
     <section id="skills">
-        <div class="box22">
-            <div class="skills-card" style="--i:1;">
-                <div>
-                    <img class="skills-card-img" src="Skills_Logo/java_logo.png" alt="">
+        <div class="container">
+            <div class="section-heading">
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+            <!-- SKILL CONTAINER 1 -->
+            <h2>Languages</h2>
+            <div class="skills-card-container">
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="Skill Icon" class="skills-card-img">
+                    <h3 class="skills-card-name">JAVA</h3>
                 </div>
-                <div class="skills-card-name">
-                    JAVA
+                <div class="skills-card">
+                    <img src="https://img.icons8.com/?size=512&id=40670&format=png" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">C/C++</h3>
+                </div>
+                <div class="skills-card">
+                    <img src="https://img.icons8.com/?size=512&id=13441&format=png" alt="Skill Icon" class="skills-card-img">
+                    <h3 class="skills-card-name">Python</h3>
+                </div>
+                <div class="skills-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">JAVASCRIPT</h3>
                 </div>
             </div>
-
-            <div class="skills-card" style="--i:2;">
-                <div>
-                    <img class="skills-card-img" src="Skills_Logo/spring_logo.png" alt="">
+            </div>
+            <!-- SKILL CONTAINER 2 -->
+            <h2>FRONTEND</h2>
+            <div class="skills-card-container">
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">HTML</h3>
                 </div>
-                <div class="skills-card-name">
-                    Spring Boot
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">CSS</h3>
                 </div>
             </div>
-
-            <div class="skills-card" style="--i:3;">
-                <div>
-                    <img class="skills-card-img" src="https://www.vectorlogo.zone/logos/mysql/mysql-official.svg"
-                        alt="">
+            <!-- SKILL CONTAINER 3 -->
+            <h2>BACKEND</h2>
+            <div class="skills-card-container1">
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">SPRING BOOT</h3>
                 </div>
-                <div class="skills-card-name">
-                    MySQL
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/hibernate/hibernate-icon.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">Hibernate</h3>
+                </div>
+                <div class="skills-card">
+                    <img src="https://www.svgrepo.com/show/354051/maven.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">Maven</h3>
+                </div>
+                
+            </div>
+            <!-- SKILL CONTAINER 4 -->
+            <h2>DATABASES</h2>
+            <div class="skills-card-container2">
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/mysql/mysql-official.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">MySQL</h3>
+                </div>
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">MONGO DB</h3>
+                </div>
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-vertical.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">PostgreSql</h3>
                 </div>
             </div>
-
-            <div class="skills-card" style="--i:4;">
-                <div>
-                    <img class="skills-card-img" src="Skills_Logo/hibernate_logo.png" alt="">
-                </div>
-                <div class="skills-card-name">
-                    Hibernate
-                </div>
-            </div>
-
-            <div class="skills-card" style="--i:5;">
-                <div>
-                    <img class="skills-card-img" src="Skills_Logo/Git_logo.png" alt="">
-                </div>
-                <div class="skills-card-name">
-                    Git
-                </div>
-            </div>
-
-            <div class="skills-card" style="--i:6;">
-                <div>
-                    <img class="skills-card-img" src="Skills_Logo/html_logo.png" alt="">
-                </div>
-                <div class="skills-card-name">
-                    HTML
-                </div>
-
-            </div>
-
-            <div class="skills-card" style="--i:7;">
-                <div>
-                    <img class="skills-card-img" src="Skills_Logo/css_logo.webp" alt="">
-                </div>
-                <div class="skills-card-name">
-                    CSS
-                </div>
-            </div>
-
-            <div class="skills-card" style="--i:8;">
-                <div>
-                    <img class="skills-card-img" src="Skills_Logo/js_logo2.jpg" alt="">
-                </div>
-                <div class="skills-card-name">
-                    JavaScript
-                </div>
-            </div>
-
-            <div  class="skills-card" style="--i:9;">
-                <div>
-                    <img class="skills-card-img" src="Skills_Logo/js_logo2.jpg" alt="">
-                </div>
-                <div class="skills-card-name">
-                    JavaScript
-                </div>
-            </div>
-
-            <div  class="skills-card" style="--i:10;">
-                <div>
-                    <img class="skills-card-img" src="Skills_Logo/js_logo2.jpg" alt="">
-                </div>
-                <div class="skills-card-name">
-                    JavaScript
+            <!-- SKILL CONTAINER 5 -->
+            <h2>TOOLS</h2>
+            <div class="skills-card-container3">
+                <div class="skills-card">
+                    <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="Skill Icon"
+                        class="skills-card-img">
+                    <h3 class="skills-card-name">GITHUB</h3>
                 </div>
             </div>
         </div>
-
     </section>
 
     <!-- Projects Section -->
@@ -165,100 +187,103 @@
                     <div class="project-card">
                         <!-- Project 1 content -->
                         <img src="#" alt="">
-                        <h2 class="project-title">xyz</h2>
-                        <p class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-                            nam!</p>
-                        <p class="project-tech-stack">JAVA</p>
-                        <a href="#" class="project-github-link">Github</a>
-                        <a href="#" class="project-deployed-link">Netlify</a>
+                        <h2 class="project-title">ASEN</h2>
+                        <img class="project-logo" src="https://cdn.discordapp.com/attachments/1128079625818480751/1128798435336781824/Amaro_1.png" alt="">
+                        <p class="project-description">ASEN is a fashion destination, inspired by Ajio, where you can find handpicked styles at unbeatable prices. Explore the
+                        latest fashion trends, shop with ease, and express your unique style at ASEN.</p>
+                        <p class="project-tech-stack">HTML | CSS | JAVASCRIPT</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Anklet9/ASEN/tree/main/ASEN" class="project-github-link">Github</a>
+                            <a href="https://polite-lily-0bd66e.netlify.app" class="project-deployed-link">Netlify</a>
+                        </div>
                     </div>
-
+                    
                     <div class="project-card">
                         <!-- Project 2 content -->
                         <img src="#" alt="">
-                        <h2 class="project-title">xyz</h2>
-                        <p class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-                            nam!</p>
-                        <p class="project-tech-stack">JAVA</p>
-                        <a href="#" class="project-github-link">Github</a>
-                        <a href="#" class="project-deployed-link">Netlify</a>
+                        <h2 class="project-title">RETAX</h2>
+                        <img class="project-logo2"
+                            src="https://cdn.discordapp.com/attachments/1128079625818480751/1128800110176899172/Retax_1.jpg" alt="">
+                        <p class="project-description">Retax A CRM system, also known as a Customer Relationship
+                            Management system, is a software tool that assists businesses
+                            in managing and improving customer relationships and interactions.</p>
+                        <p class="project-tech-stack">HTML | CSS | JavaScript | RestApi</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Anklet9/inconclusive-meal-3122" class="project-github-link">Github</a>
+                            <a href="https://jocular-mooncake-2f4da0.netlify.app" class="project-deployed-link">Netlify</a>
+                        </div>
                     </div>
-
                     <div class="project-card">
                         <!-- Project 3 content -->
                         <img src="#" alt="">
-                        <h2 class="project-title">xyz</h2>
-                        <p class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-                            nam!</p>
+                        <h2 class="project-title">ASEN</h2>
+                        <img class="project-logo2"
+                            src="#" alt="">
+                        <h2 class="project-title">abc</h2>
+                        <p class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor blanditiis aliquid eligendi. Officia dolores deserunt exercitationem itaque eveniet nemo vel? Totam maiores ad alias quo dolores quae in consectetur? Perspiciatis, quam expedita!</p>
                         <p class="project-tech-stack">JAVA</p>
-                        <a href="#" class="project-github-link">Github</a>
-                        <a href="#" class="project-deployed-link">Netlify</a>
+                        <div class="project-links">
+                            <a href="https://github.com/Anklet9/inconclusive-meal-3122" class="project-github-link">Github</a>
+                            <a href="https://jocular-mooncake-2f4da0.netlify.app" class="project-deployed-link">Netlify</a>
+                        </div>
                     </div>
-
                     <div class="project-card">
                         <!-- Project 4 content -->
                         <img src="#" alt="">
+                        <h2 class="project-title">ASEN</h2>
+                        <img class="project-logo2"
+                            src="#" alt="">
                         <h2 class="project-title">xyz</h2>
-                        <p class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-                            nam!</p>
+                        <p class="project-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem ab, impedit repudiandae alias maxime maiores suscipit tenetur perferendis nam fuga repellat eligendi? Eveniet nobis laborum a tempora, deleniti soluta quos itaque illo!
+                        </p>
                         <p class="project-tech-stack">JAVA</p>
-                        <a href="#" class="project-github-link">Github</a>
-                        <a href="#" class="project-deployed-link">Netlify</a>
-                    </div>
-
-                    <div class="project-card">
-                        <!-- Project 5 content -->
-                        <img src="#" alt="">
-                        <h2 class="project-title">xyz</h2>
-                        <p class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-                            nam!</p>
-                        <p class="project-tech-stack">JAVA</p>
-                        <a href="#" class="project-github-link">Github</a>
-                        <a href="#" class="project-deployed-link">Netlify</a>
+                        <div class="project-links">
+                            <a href="https://github.com/Anklet9/inconclusive-meal-3122" class="project-github-link">Github</a>
+                            <a href="https://jocular-mooncake-2f4da0.netlify.app" class="project-deployed-link">Netlify</a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="project-controls">
-                <button class="project-control-btn prev-btn" id="prevBtn">&lt;</button>
-                <button class="project-control-btn next-btn" id="nextBtn">&gt;</button>
+                <button class="project-control-btn prev-btn" id="prevBtn">Previous</button>
+                <button class="project-control-btn next-btn" id="nextBtn">Next</button>
             </div>
         </div>
     </section>
-
-    <!-- gitHub streak stats -->
-
-    <div class="container">
-        <div class="section-wrapper">
-            <h2 class="section-title">Github Profile</h2>
+    
+    <!-- github -->
+    <div id="github">
+        <h2 class="section-title">Github Statistics</h2>
+        <div class="github">
+            <div>
+                <div class="container">
+                    <a class="react-activity-calendar" href="https://git.io/streak-stats">
+                        <img id="github-streak-stats"
+                            src="https://github-readme-streak-stats.herokuapp.com/?user=Anklet9&background=000000&border=FFFFFF&stroke=FFFFFF&ring=FA8072&fire=FA8072&currStreakNum=FA8072&sideNums=FA8072&currStreakLabel=FA8072&sideLabels=FA8072&dates=FA8072&excludeDaysLabel=FA8072&border_radius=5"
+                            alt="GitHub Streak Stats" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="container">
+                    <a class="react-activity-calendar" href="https://github.com/Anklet9/github-readme-stats">
+                        <img id="github-top-langs"
+                            src="https://github-readme-stats.vercel.app/api/top-langs/?username=Anklet9"
+                            alt="GitHub Top Langs" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="container">
+                    <a class="react-activity-calendar" href="https://github.com/Anklet9/github-readme-stats">
+                        <img id="github-stats-card" src="https://github-readme-stats.vercel.app/api?username=Anklet9&show_icons=true"
+                            alt="GitHub Stats Card" />
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="github">
-        <div>
-            <a class="react-activity-calendar" href="https://git.io/streak-stats">
-                <img id="github-streak-stats"
-                    src="https://github-readme-streak-stats.herokuapp.com/?user=anklet9&theme=highcontrast&border_radius=5"
-                    alt="GitHub Streak Stats" />
-            </a>
-        </div>
-
-        <div>
-            <a class="react-activity-calendar" href="https://github.com/anklet9/github-readme-stats">
-                <img id="github-stats-card" src="https://github-readme-stats.vercel.app/api?username=anklet9"
-                    alt="GitHub Stats Card" />
-            </a>
-        </div>
-
-        <div>
-            <a class="react-activity-calendar" href="https://github.com/anklet9/github-readme-stats">
-                <img id="github-top-langs"
-                    src="https://github-readme-stats.vercel.app/api/top-langs/?username=anklet9"
-                    alt="GitHub Top Langs" />
-            </a>
-        </div>
-
-    </div>
-
+    
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -267,19 +292,20 @@
             </div>
             <ul class="contact-list">
                 <li><a href="https://github.com/Anklet9" id="contact-github">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/aniket-sengar-5b2341194/" id="contact-linkedin">LinkedIn</a>
-                </li>
-                <li><a href="#" id="contact-phone">Phone: +91 9650726887</a></li>
                 <li><a href="mailto:aniketsengar73@gmail.com" id="contact-email">Email</a></li>
+                <li><a href="https://www.linkedin.com/in/aniket-sengar-5b2341194/" id="contact-linkedin"> LinkedIn</a>
+                </li>
+                <li><a href="tel:+919650726887" id="contact-phone">Phone</a></li>
             </ul>
         </div>
     </section>
-
-
-
-
+    <div class="empty">
+        <!-- <p>MADE WITH </p> -->
+        <footer class="footer">Made with ❤️ by Aniket Sengar</footer>
+    </div>
     <!-- JavaScript -->
     <script src="index.js"></script>
 </body>
+<script src="https://kit.fontawesome.com/6b81da5529.js" crossorigin="anonymous"></script>
 
 </html>
