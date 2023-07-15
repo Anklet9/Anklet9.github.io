@@ -359,7 +359,8 @@ body {
     text-align: center;
 }
 
-.resume-button {
+
+#resume-button-2 {
     display: inline-block;
     padding: 10px 20px;
     background-color: salmon;
@@ -369,7 +370,7 @@ body {
     border-radius: 10px;
 }
 
-.resume-button:hover {
+#resume-button-2:hover {
     background-color: #19abbb;
 }
 
