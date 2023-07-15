@@ -212,7 +212,7 @@ body {
     padding: 50px 0;
 }
 
-#projects h2 {
+.project-title {
     text-align: center;
 }
 
@@ -223,7 +223,7 @@ body {
 
 .project-card-container {
     display: flex;
-    height: 330px;
+    height: 390px;
     grid-template-columns: repeat(2, 1fr);
     transition: transform 0.5s ease;
 }
@@ -238,6 +238,10 @@ body {
     margin-right: 20px;
 }
 
+ .project-card * {
+    margin-top: -1px;
+     /* line-height: 15px; */
+ } 
 .project-card:hover {
     background-color: whitesmoke;
 }
@@ -249,7 +253,7 @@ body {
 
 .project-logo2 {
     height: 100px;
-    margin-left: 36%;
+    margin-left: 38%;
 
 }
 
