@@ -93,9 +93,9 @@ function setScrollParameters() {
   } else if (screenWidth >= 768) {
     projectWidth = 280;
     projectsToShow = 1.83; // Show one full card and half of the next card
-  } else {
-    projectWidth = 240;
-    projectsToShow = 1.83;
+  } else if (screenWidth <= 767) {
+    projectWidth = 230;
+    projectsToShow = 1.9;
   }
 
   const containerWidth = projectContainer.offsetWidth;
