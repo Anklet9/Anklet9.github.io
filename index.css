@@ -15,7 +15,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: re(255, 255, 255);
+    background-color: white;
     color: black;
     z-index: 1000;
 }
@@ -40,6 +40,7 @@ body {
 
 #nav-menu li a {
     color: black;
+    border: 1px so;
     text-decoration: none;
     cursor: pointer;
     font-size: 20px;
@@ -398,8 +399,8 @@ body {
 .switch {
     position: relative;
     display: inline-block;
-    width: 80px;
-    height: 40px;
+    width: 50px;
+    height: 20px;
 }
 
 .switch input[type="checkbox"] {
@@ -411,21 +412,21 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
+    right: 5;
     bottom: 0;
     background-size: cover;
     background-position: center;
     cursor: pointer;
-    background-color: rgb(255, 173, 0);
+    /* background-color: rgb(255, 173, 0); */
     border-radius: 34px;
-    border: 1px solid rgb(247, 83, 83);
+    /* border: 1px solid rgb(247, 83, 83); */
     transition: background-color 0.1s ease;
 }
 
 .switch .slider:before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 0%;
     left: 4%;
     transform: translate(0, -50%);
     width: 32px;
@@ -441,7 +442,7 @@ body {
 .switch input:checked+.slider:before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 55%;
     transform: translate(-50%, -50%);
     width: 32px;
@@ -449,12 +450,6 @@ body {
     background-image: url("https://cdn.discordapp.com/attachments/1128079625818480751/1130938051716186123/moon.png");
     background-size: cover;
     background-position: center;
-}
-
-
-input[type="checkbox"]:checked+.slider {
-    background-color: rgb(37, 36, 36);
-    border: 1px solid #f9f9f9;
 }
 
 input[type="checkbox"]:checked+.slider:before {
@@ -621,7 +616,7 @@ body.dark-mode {
     .skills-card-container,
     .skills-card-container1,
     .skills-card-container2,
-    .skills-card-contain er3 {
+    .skills-card-container3 {
         display: flex;
         grid-template-columns: repeat(1, 2fr);
     }
