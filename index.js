@@ -24,6 +24,27 @@ function smoothScroll(target, duration) {
     requestAnimationFrame(scrollAnimation);
   }
   
+
+// Function to show/hide the "Go to Top" button based on the scroll position
+function handleGoTopButton() {
+  const goTopBtn = document.querySelector('.go-top');
+  const scrollY = window.scrollY;
+
+  if (scrollY > 200) {
+    goTopBtn.classList.add('active');
+  } else {
+    goTopBtn.classList.remove('active');
+  }
+}
+
+// Function to scroll to the top when the "Go to Top" button is clicked
+function goToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Attach the handleGoTopButton function to the scroll event
+window.addEventListener('scroll', handleGoTopButton);
+
 // Get all the navigation links
 const navLinks = document.querySelectorAll('#nav-menu a');
 // Navbar links smooth scroll
@@ -195,3 +216,32 @@ function toggleLogoImage(darkModeEnabled) {
     white.style.display = 'none';
   }
 }
+
+
+
+
+
+/**
+ * skills toggle
+ */
+
+
+// Define the elemToggleFunc function first
+const elemToggleFunc = function (elem) {
+  elem.classList.toggle("active");
+}
+
+// Add the event listener after the function is defined
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtnBox = document.querySelector("[data-toggle-box]");
+  const toggleBtns = document.querySelectorAll("[data-toggle-btn]");
+  const skillsBox = document.querySelector("[data-skills-box]");
+
+  for (let i = 0; i < toggleBtns.length; i++) {
+    toggleBtns[i].addEventListener("click", function () {
+      elemToggleFunc(toggleBtnBox);
+      for (let i = 0; i < toggleBtns.length; i++) { elemToggleFunc(toggleBtns[i]); }
+      elemToggleFunc(skillsBox);
+    });
+  }
+});
