@@ -612,6 +612,9 @@ body.dark-mode {
     color: salmon;
 }
 
+.dark-mode .logo img {
+    mix-blend-mode: normal;
+}
 .dark-mode #nextBtn:hover {
     background-color: whitesmoke;
     color: salmon;
