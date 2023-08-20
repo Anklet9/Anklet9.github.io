@@ -34,6 +34,7 @@ body {
     width: 70px;
     height: 70px;
     margin-left: 10px;
+    mix-blend-mode: multiply;
 }
 
 #nav-menu ul {
