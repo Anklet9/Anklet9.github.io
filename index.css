@@ -982,3 +982,57 @@ body.dark-mode {
         width: 185%;
     }
 }
+
+@media all and (min-width: 375px) and (max-width:1028px) {
+    body {
+        max-width: 425px;
+    }
+
+    #home {
+        width: 208%;
+        margin-top: 25%;
+
+    }
+
+    #about {
+        width: 208%;
+
+    }
+
+    .skills {
+        margin: auto;
+
+        width: 208%;
+        display: grid;
+        grid-template-columns: 3fr 6fr;
+        align-items: center;
+        gap: 50px;
+    }
+
+    #projects {
+
+        width: 208%;
+        margin: auto;
+    }
+
+    .container div {
+        margin: auto;
+
+    }
+
+
+    #github {
+        margin: auto;
+        width: 208%;
+
+    }
+
+    .github {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    footer {
+        width: 185%;
+    }
+}
