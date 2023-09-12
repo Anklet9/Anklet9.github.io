@@ -1,29 +1,78 @@
+// JOB TITLE MOVING ANIMATION
+const jobTitleElement = document.getElementById('job-title');
+const cursorElement = document.createElement('span');
+cursorElement.classList.add('cursor');
+cursorElement.textContent = '|';
+jobTitleElement.appendChild(cursorElement);
+const jobTitles = [
+  'NIKET SENGAR.',
+  'n Aspiring Java Backend Developer.'
+];
+let currentIndex = 0;
+
+function updateJobTitle() {
+  const currentJobTitle = jobTitles[currentIndex];
+  const typingDelay = 150; // Delay between typing each character
+  const erasingDelay = 100; // Delay before erasing the job title
+
+  let i = 0;
+  let isErasing = false;
+
+  function typeNextCharacter() {
+    if (isErasing) {
+      const updatedJobTitle = currentJobTitle.slice(0, i);
+      jobTitleElement.textContent = updatedJobTitle;
+      i--;
+      if (i === 0) {
+        isErasing = false;
+        currentIndex = (currentIndex + 1) % jobTitles.length;
+        setTimeout(updateJobTitle, 500);
+      } else {
+        setTimeout(typeNextCharacter, erasingDelay);
+      }
+    } else {
+      const updatedJobTitle = currentJobTitle.slice(0, i) + '|';
+      jobTitleElement.textContent = updatedJobTitle;
+      i++;
+      if (i <= currentJobTitle.length) {
+        setTimeout(typeNextCharacter, typingDelay);
+      } else {
+        isErasing = true;
+        cursorElement.style.visibility = 'hidden'; // Hide cursor when erasing
+        setTimeout(typeNextCharacter, erasingDelay);
+      }
+    }
+  }
+
+  typeNextCharacter();
+}
+updateJobTitle();
 // Smooth scroll to section
 function smoothScroll(target, duration) {
-    const targetSection = document.querySelector(target);
-    const targetPosition = targetSection.getBoundingClientRect().top;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    let startTime = null;
-  
-    function scrollAnimation(currentTime) {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const scrollY = ease(timeElapsed, startPosition, distance, duration);
-      window.scrollTo(0, scrollY);
-      if (timeElapsed < duration) requestAnimationFrame(scrollAnimation);
-    }
-  
-    function ease(t, b, c, d) {
-      t /= d / 2;
-      if (t < 1) return c / 2 * t * t + b;
-      t--;
-      return -c / 2 * (t * (t - 2) - 1) + b;
-    }
-  
-    requestAnimationFrame(scrollAnimation);
+  const targetSection = document.querySelector(target);
+  const targetPosition = targetSection.getBoundingClientRect().top;
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  let startTime = null;
+
+  function scrollAnimation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const scrollY = ease(timeElapsed, startPosition, distance, duration);
+    window.scrollTo(0, scrollY);
+    if (timeElapsed < duration) requestAnimationFrame(scrollAnimation);
   }
-  
+
+  function ease(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+  }
+
+  requestAnimationFrame(scrollAnimation);
+}
+
 
 // Function to show/hide the "Go to Top" button based on the scroll position
 function handleGoTopButton() {
@@ -176,4 +225,51 @@ document.addEventListener("DOMContentLoaded", function () {
       elemToggleFunc(skillsBox);
     });
   }
+});
+
+
+// PROJECT SLIDER
+document.addEventListener("DOMContentLoaded", function () {
+  const projectContainers = document.querySelectorAll(".project-container");
+  const toggleButtons = document.querySelectorAll('[data-toggle-btn2]');
+  const projectToggle = document.querySelector('.project-toggle');
+
+  // Function to filter and display projects based on the selected category
+  function filterProjects(selectedCategory) {
+    projectContainers.forEach((container) => {
+      const projectTechStack = container.querySelector(".project-tech-stack").textContent.toLowerCase();
+
+      if ((selectedCategory === "enterprise" && projectTechStack.includes("core java")) ||
+        (selectedCategory === "full stack" && projectTechStack.includes("html"))) {
+        container.style.display = "block";
+      } else {
+        container.style.display = "none";
+      }
+    });
+  }
+
+  toggleButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Remove the "active" class from all buttons
+      toggleButtons.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      // Add the "active" class to the clicked button
+      button.classList.add("active");
+
+      // Move the color slider to the clicked button's position
+      const sliderPosition = button.offsetLeft;
+      projectToggle.style.setProperty('--slider-left', sliderPosition + 2 + "px");
+
+      // Determine the selected category based on the button's text
+      const selectedCategory = button.textContent.toLowerCase();
+
+      // Call the filterProjects function to display the projects
+      filterProjects(selectedCategory);
+    });
+  });
+
+  // Initialize the filter with the default category ("Enterprise")
+  filterProjects("enterprise");
 });

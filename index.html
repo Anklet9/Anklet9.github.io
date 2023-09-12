@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon"
-        href="https://cdn.discordapp.com/attachments/1128079625818480751/1143209806883197062/White-removebg-preview.png" type="jpeg/png">
+        href="https://cdn.discordapp.com/attachments/1128079625818480751/1143209806883197062/White-removebg-preview.png"
+        type="jpeg/png">
     <title>Aniket Sengar</title>
 </head>
 
@@ -48,19 +49,20 @@
                 <div class="home-text">
                     <div>
                         <p style="font-size: 26px;line-height: 1px;font-weight: 600;">Hi, I'm</p>
-                        <p style="font-size: 40px;line-height: 1px;font-weight: 600;" id="user-detail-name">ANIKET
-                            SENGAR</p>
-                        <p id="backend_title">Java Backend Developer</p>
+                        <h2>
+                            <span class="stationary-text">A</span>
+                            <span id="job-title"></span>
+                        </h2>
                         <ul id="socials">
                             <li><a href="mailto:aniketsengar73@gmail.com"><i class="fa-solid fa-envelope fa-bounce"
-                                        style="color: #fa8072;"></i></a>
+                                        style="color: #f76c5c;"></i></a>
                             </li>
                             <li><a href="https://www.linkedin.com/in/aniket-sengar-5b2341194/"><i
-                                        class="fa-brands fa-linkedin fa-bounce" style="color: #fa8072;"></i></a></li>
+                                        class="fa-brands fa-linkedin fa-bounce" style="color: #f76c5c;"></i></a></li>
                             <li><a href="https://github.com/Anklet9"><i class="fa-brands fa-github fa-bounce"
-                                        style="color: #fa8072;"></i></a></li>
+                                        style="color: #f76c5c;"></i></a></li>
                             <li><a href="tel:+919650726887"><i class="fa-solid fa-phone fa-bounce"
-                                        style="color: #fa8072;"></i></a></li>
+                                        style="color: #f76c5c;"></i></a></li>
                         </ul>
                     </div>
                     <div id="mypic">
@@ -76,6 +78,10 @@
         <div class="container">
             <div class="about-content">
                 <h2 class="section-title">About</h2>
+                <div class="about-img">
+                    <img src="https://cdn.discordapp.com/attachments/1128079625818480751/1148309470015926344/output-onlinegiftools_1.gif"
+                        alt="" srcset="">
+                </div>
                 <p class="about-description" id="user-detail-intro">Java backend developer with expertise in building
                     full-stack projects utilizing HTML, CSS, JavaScript, Java, SpringBoot, Hibernate, and restful APIs.
                     Strong problem solving skills, attention to detail, and a proactive team player.
@@ -326,89 +332,100 @@
 
     <!-- Projects Section -->
     <section id="projects">
+        <div class="project-toggle" data-toggle-box2>
+            <button class="project-category-btn2 active" data-toggle-btn2>Enterprise</button>
+            <button class="project-category-btn2" data-toggle-btn2>Full Stack</button>
+        </div>
+
+
         <div class="container">
-            <h2 class="section-title">Projects</h2>  
+            <h2 class="section-title">Projects</h2>
+            <!-- Enterprise CODEFUSE-->
             <div class="project-container">
                 <div class="project-card">
+                    <div class="project-photo1">
+                        <img src="https://cdn.discordapp.com/attachments/1128079625818480751/1151081611731943434/image.png"
+                            alt="" srcset="">
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">CODEFUSE</h2>
+                        <img class="project-logo2"
+                            src="https://cdn.discordapp.com/attachments/1128079625818480751/1147595690738987108/Screenshot_2023-09-02_234404-removebg-preview.png"
+                            alt="">
+                        <p class="project-description">CodeFuse is an interview taking platform that leverages the power
+                            of OpenAI's GPT-3 for conducting interviews and
+                            providing responses. This platform allows interviewers to interact with candidates through a
+                            chat interface powered by
+                            ChatGPT, streamlining the interview process.
+                        </p>
+                        <p class="project-tech-stack">React | TailWind CSS | Node.js | Core Java | SpringBoot | OpenAPI
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/Anklet9/CodeFuse" class="project-github-link"><i
+                                    class="fa-brands fa-github-alt"></i></a>
+                            <a href="https://codefuse-mu.vercel.app/" class="project-github-link"><i
+                                    class="fa-solid fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Enterprise BOOK MY BUS-->
+            <!-- <div class="project-container">
+                <div class="project-card">
                     <div class="project-photo">
-                        <img src="https://cdn.discordapp.com/attachments/1128079625818480751/1133855777237500085/WHAT-IS-THE-PURPOSE-OF-A-LIBRARY-MANAGEMENT-SYSTEM-min.png" alt=""
-                            srcset="">
+                        <img src="https://cdn.discordapp.com/attachments/1128079625818480751/1133855777237500085/WHAT-IS-THE-PURPOSE-OF-A-LIBRARY-MANAGEMENT-SYSTEM-min.png"
+                            alt="" srcset="">
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">Book My Bus</h2>
+                        <img class="project-logo2"
+                            src="https://cdn.discordapp.com/attachments/1128079625818480751/1150666879854194768/1-removebg-preview.png"
+                            alt="">
+                        <p class="project-description">The Book My Bus is a web application that allows users to manage buses, routes, and user feedback related to bus
+                        services. This project is built using Java, Spring Boot, and MySQL.
+                        </p>
+                        <p class="project-tech-stack">Core Java | SpringBoot | Hibernate | Spring Security</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Anklet9/selective-spark-9795"
+                                class="project-github-link">Github</a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- Enterprise -->
+            <div class="project-container">
+                <div class="project-card">
+                    <div class="project-photo2">
+                        <img src="https://cdn.discordapp.com/attachments/1128079625818480751/1133855777237500085/WHAT-IS-THE-PURPOSE-OF-A-LIBRARY-MANAGEMENT-SYSTEM-min.png"
+                            alt="" srcset="">
                     </div>
                     <div class="project-info">
                         <h2 class="project-title">Absolute Minds</h2>
                         <img class="project-logo2"
-                            src="https://cdn.discordapp.com/attachments/1128079625818480751/1133856878674329680/icons8-library-100.png" alt="">
-                        <p class="project-description">Absolute Minds Library Management System! This software solution is designed to efficiently manage the operations of
-                        your library, making book management, rental transactions, and feedback collection a breeze.</p>
+                            src="https://cdn.discordapp.com/attachments/1128079625818480751/1133856878674329680/icons8-library-100.png"
+                            alt="">
+                        <p class="project-description">Absolute Minds Library Management System! This software
+                            solution
+                            is designed to efficiently manage the operations of
+                            your library, making book management, rental transactions, and feedback collection a
+                            breeze.
+                        </p>
                         <p class="project-tech-stack">Core Java | Hibernate | Maven </p>
                         <div class="project-links">
-                            <a href="https://github.com/Anklet9/selective-spark-9795" class="project-github-link">Github</a>
+                            <a href="https://github.com/Anklet9/selective-spark-9795" class="project-github-link"><i
+                                    class="fa-brands fa-github-alt"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Full Stack -->
             <div class="project-container">
                 <div class="project-card">
                     <div class="project-photo">
-                        <img src="https://cdn.discordapp.com/attachments/1128079625818480751/1133853989163761808/image.png" alt=""
-                            srcset="">
+                        <img src="https://cdn.discordapp.com/attachments/1128079625818480751/1133853989163761808/image.png"
+                            alt="" srcset="">
                     </div>
                     <div class="project-info">
-                        <!-- <h2 class="project-title">RETAX</h2> -->
-                        <img class="project-logo2"
-                            src="https://cdn.discordapp.com/attachments/1128079625818480751/1128800110176899172/Retax_1.jpg" alt="">
-                        <p class="project-description">Retax A CRM system, also known as a Customer Relationship
-                            Management system, is a software tool that assists businesses
-                            in managing and improving customer relationships and interactions.</p>
-                        <p class="project-tech-stack">HTML | CSS | JavaScript | RestApi</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Anklet9/inconclusive-meal-3122" class="project-github-link">Github</a>
-                            <a href="https://jocular-mooncake-2f4da0.netlify.app" class="project-deployed-link">Netlify</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                <div class="project-container">
-                    <div class="project-card">
-                        <div class="project-photo">
-                            <img src="https://cdn.discordapp.com/attachments/1128079625818480751/1133851598603436122/image.png" alt="" srcset="">
-                        </div>
-                        <div class="project-info">
-                            <!-- <h2 class="project-title">ASEN</h2> -->
-                            <img class="project-logo"
-                                src="https://cdn.discordapp.com/attachments/1128079625818480751/1128798435336781824/Amaro_1.png" alt="">
-                            <p class="project-description">ASEN is a fashion destination, inspired by Ajio, where you can
-                                find handpicked styles at unbeatable prices. Explore the
-                                latest fashion trends, shop with ease, and express your unique style at ASEN.</p>
-                            <p class="project-tech-stack">HTML | CSS | JAVASCRIPT</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Anklet9/ASEN/tree/main/ASEN" class="project-github-link">Github</a>
-                                <a href="https://polite-lily-0bd66e.netlify.app" class="project-deployed-link">Netlify</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
-<!-- <div class="project-card">
-                        Project 1 content
-                        <img src="#" alt="">
-                        <h2 class="project-title">ASEN</h2>
-                        <img class="project-logo"
-                            src="https://cdn.discordapp.com/attachments/1128079625818480751/1128798435336781824/Amaro_1.png"
-                            alt="">
-                        <p class="project-description">ASEN is a fashion destination, inspired by Ajio, where you can
-                            find handpicked styles at unbeatable prices. Explore the
-                            latest fashion trends, shop with ease, and express your unique style at ASEN.</p>
-                        <p class="project-tech-stack">HTML | CSS | JAVASCRIPT</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Anklet9/ASEN/tree/main/ASEN"
-                                class="project-github-link">Github</a>
-                            <a href="https://polite-lily-0bd66e.netlify.app" class="project-deployed-link">Netlify</a>
-                        </div>
-                    </div> -->
-<!-- <div class="project-card">
-                        Project 2 content
-                        <img src="#" alt="">
                         <h2 class="project-title">RETAX</h2>
                         <img class="project-logo2"
                             src="https://cdn.discordapp.com/attachments/1128079625818480751/1128800110176899172/Retax_1.jpg"
@@ -416,15 +433,42 @@
                         <p class="project-description">Retax A CRM system, also known as a Customer Relationship
                             Management system, is a software tool that assists businesses
                             in managing and improving customer relationships and interactions.</p>
-                        <p class="project-tech-stack">HTML | CSS | JavaScript | RestApi</p>
+                        <p class="project-tech-stack">HTML | CSS | JAVASCRIPT | RESTAPI</p>
                         <div class="project-links">
-                            <a href="https://github.com/Anklet9/inconclusive-meal-3122"
-                                class="project-github-link">Github</a>
-                            <a href="https://jocular-mooncake-2f4da0.netlify.app"
-                                class="project-deployed-link">Netlify</a>
+                            <a href="https://github.com/Anklet9/inconclusive-meal-3122" class="project-github-link"><i
+                                    class="fa-brands fa-github-alt"></i></a>
+                            <a href="https://jocular-mooncake-2f4da0.netlify.app" class="project-deployed-link"><i
+                                    class="fa-solid fa-eye"></i></a>
                         </div>
-                    </div> -->
-
+                    </div>
+                </div>
+            </div>
+            <!-- Full Stack -->
+            <div class="project-container">
+                <div class="project-card">
+                    <div class="project-photo">
+                        <img src="https://cdn.discordapp.com/attachments/1128079625818480751/1133851598603436122/image.png"
+                            alt="" srcset="">
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">ASEN</h2>
+                        <img class="project-logo"
+                            src="https://cdn.discordapp.com/attachments/1128079625818480751/1128798435336781824/Amaro_1.png"
+                            alt="">
+                        <p class="project-description">ASEN is a fashion destination, inspired by Ajio, where you
+                            can
+                            find handpicked styles at unbeatable prices. Explore the
+                            latest fashion trends, shop with ease, and express your unique style at ASEN.</p>
+                        <p class="project-tech-stack">HTML | CSS | JAVASCRIPT</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Anklet9/ASEN" class="project-github-link"><i
+                                    class="fa-brands fa-github-alt"></i></a>
+                            <a href="https://polite-lily-0bd66e.netlify.app" class="project-deployed-link"><i
+                                    class="fa-solid fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -463,25 +507,26 @@
     </div>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-heading">
-                <h2 class="section-title">Contact</h2>
-            </div>
-            <ul class="contact-list">
-                <li><a href="https://github.com/Anklet9" id="contact-github">GitHub</a></li>
-                <li><a href="mailto:aniketsengar73@gmail.com" id="contact-email">Email</a></li>
-                <li><a href="https://www.linkedin.com/in/aniket-sengar-5b2341194/" id="contact-linkedin"> LinkedIn</a>
-                </li>
-                <li><a href="tel:+919650726887" id="contact-phone">Phone</a></li>
-            </ul>
+
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
         </div>
-    </section>
-    <div class="empty">
-        <!-- <p>MADE WITH </p> -->
-        <footer class="footer">Made with ❤️ by Aniket Sengar</footer>
-    </div>
-    <!-- JavaScript -->
+        <ul class="socials_icon">
+            <li><a href="mailto:aniketsengar73@gmail.com"><i class="fa-solid fa-envelope fa-bounce"
+                        style="color: white;"></i></a>
+            </li>
+            <li><a href="https://www.linkedin.com/in/aniket-sengar-5b2341194/"><i
+                        class="fa-brands fa-linkedin fa-bounce" style="color: white;"></i></a></li>
+            <li><a href="https://github.com/Anklet9"><i class="fa-brands fa-github fa-bounce"
+                        style="color: white;"></i></a></li>
+            <li><a href="tel:+919650726887"><i class="fa-solid fa-phone fa-bounce" style="color: white;"></i></a></li>
+        </ul>
+        <p>Made with ❤️ by Aniket Sengar</p>
+    </footer>
     <script src="index.js"></script>
     <a href="#top" class="go-top" data-go-top title="Go to Top">
         <ion-icon name="arrow-up"></ion-icon>
