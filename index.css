@@ -1052,7 +1052,7 @@ body.dark-mode {
     }
 
     .home-text>div:nth-child(1) {
-        margin-left: -1%;
+        margin-left: 0%;
     }
 
     #mypic {
