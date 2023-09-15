@@ -1036,3 +1036,65 @@ body.dark-mode {
         width: 185%;
     }
 }
+
+@media all and (min-width: 320px) and (max-width:1028px) {
+    body {
+        width: 102%;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    #home {
+        border: red solid 1px;
+        width: 205%;
+    }
+
+    .home-text>div:nth-child(1) {
+        margin-left: -1%;
+    }
+
+    #mypic {
+        position: absolute;
+        margin-left: 140%;
+    }
+
+    #about {
+        width: 205%;
+    }
+
+    .skills {
+        margin: auto;
+        width: 205%;
+        display: grid;
+        grid-template-columns: 3fr 6fr;
+        align-items: center;
+        gap: 50px;
+    }
+
+    #projects {
+        width: 205%;
+        margin: auto;
+    }
+
+    .container div {
+        margin: auto;
+    }
+
+    #github {
+        margin: auto;
+        width: 205%;
+
+    }
+
+    .github {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    footer {
+        width: 175%;
+    }
+}
