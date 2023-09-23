@@ -941,9 +941,9 @@ body.dark-mode {
 
     #burger-icon {
         display: block;
-        position: absolute;
+        position: fixed;
         right: 0px;
-        top: 50%;
+        top: 5.4%;
         transform: translateY(-50%);
     }
 
@@ -1006,7 +1006,7 @@ body.dark-mode {
 
     #DARKMOE {
         position: fixed;
-        top: 3.4%;
+        top: 2.7%;
         right: 6%;
     }
 }
@@ -1016,8 +1016,13 @@ body.dark-mode {
         flex: 1;
     }
 
+    #burger-icon {
+        top: 4.7%;
+    }
+
     #navList li {
         width: 100%;
+        /* background-color: #f55f4e; */
     }
 
     #nav-menu li {
@@ -1061,5 +1066,9 @@ body.dark-mode {
     #github-stats-card,
     #github-top-langs {
         width: 98%;
+    }
+
+    #DARKMOE {
+        right: 12%;
     }
 }
