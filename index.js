@@ -1,4 +1,8 @@
-// JOB TITLE MOVING ANIMATION
+// --------------------------------------------
+//     JOB TITLE MOVING ANIMATION
+// --------------------------------------------
+
+
 const jobTitleElement = document.getElementById('job-title');
 const cursorElement = document.createElement('span');
 cursorElement.classList.add('cursor');
@@ -47,31 +51,11 @@ function updateJobTitle() {
   typeNextCharacter();
 }
 updateJobTitle();
-// Smooth scroll to section
-function smoothScroll(target, duration) {
-  const targetSection = document.querySelector(target);
-  const targetPosition = targetSection.getBoundingClientRect().top;
-  const startPosition = window.pageYOffset;
-  const distance = targetPosition - startPosition;
-  let startTime = null;
 
-  function scrollAnimation(currentTime) {
-    if (startTime === null) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-    const scrollY = ease(timeElapsed, startPosition, distance, duration);
-    window.scrollTo(0, scrollY);
-    if (timeElapsed < duration) requestAnimationFrame(scrollAnimation);
-  }
 
-  function ease(t, b, c, d) {
-    t /= d / 2;
-    if (t < 1) return c / 2 * t * t + b;
-    t--;
-    return -c / 2 * (t * (t - 2) - 1) + b;
-  }
-
-  requestAnimationFrame(scrollAnimation);
-}
+// ------------------------------
+//     DOWN TO TOP BUTTON
+// ------------------------------
 
 
 // Function to show/hide the "Go to Top" button based on the scroll position
@@ -85,67 +69,16 @@ function handleGoTopButton() {
     goTopBtn.classList.remove('active');
   }
 }
-
 // Function to scroll to the top when the "Go to Top" button is clicked
 function goToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Attach the handleGoTopButton function to the scroll event
-window.addEventListener('scroll', handleGoTopButton);
 
-// Get all the navigation links
-const navLinks = document.querySelectorAll('#nav-menu a');
-// Navbar links smooth scroll
-navLinks.forEach(link => {
-  if (!link.classList.contains('resume') && !link.classList.contains('logo')) {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const targetSection = link.getAttribute('href');
-      smoothScroll(targetSection, 1000); // Set the duration (in milliseconds) as per your preference
-    });
-  }
-});
+// ------------------------------
+//          DARK MODE
+// ------------------------------
 
-window.addEventListener('scroll', function () {
-  const currentScroll = window.pageYOffset;
-
-  // Iterate through each section to determine the active section
-  document.querySelectorAll('section').forEach(section => {
-    const sectionTop = section.offsetTop - 70;
-    const sectionHeight = section.offsetHeight;
-
-    // Check if the current scroll position is within the bounds of the section
-    if (currentScroll >= sectionTop && currentScroll < sectionTop + sectionHeight) {
-      // Remove the 'active' class from all navigation links
-      navLinks.forEach(link => link.classList.remove('active'));
-
-      // Get the corresponding navigation link using the section ID
-      const targetNavLink = document.querySelector(`#nav-menu a[href="#${section.id}"]`);
-
-      // Add the 'active' class to the corresponding navigation link
-      targetNavLink.classList.add('active');
-    }
-
-    // Special case for the contact section
-    if (
-      currentScroll + window.innerHeight >= document.documentElement.scrollHeight &&
-      section.id === 'contact'
-    ) {
-      // Remove the 'active' class from all navigation links
-      navLinks.forEach(link => link.classList.remove('active'));
-
-      // Get the corresponding navigation link using the section ID
-      const targetNavLink = document.querySelector(`#nav-menu a[href="#${section.id}"]`);
-
-      // Add the 'active' class to the corresponding navigation link
-      targetNavLink.classList.add('active');
-    }
-  });
-});
-
-
-// ---------------------------------DARK MODE-------------------------
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const darkbody = document.body;
 const logo = document.querySelector('.logo');
@@ -198,20 +131,14 @@ function toggleLogoImage(darkModeEnabled) {
   }
 }
 
-
-
-
-
-/**
- * skills toggle
- */
-
+// ------------------------------
+//     SKILL SECTION TOGGLE
+// ------------------------------
 
 // Define the elemToggleFunc function first
 const elemToggleFunc = function (elem) {
   elem.classList.toggle("active");
 }
-
 // Add the event listener after the function is defined
 document.addEventListener("DOMContentLoaded", function () {
   const toggleBtnBox = document.querySelector("[data-toggle-box]");
@@ -228,7 +155,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// PROJECT SLIDER
+// ------------------------------
+//     PROJECT SLIDER
+// ------------------------------
+
 document.addEventListener("DOMContentLoaded", function () {
   const projectContainers = document.querySelectorAll(".project-container");
   const toggleButtons = document.querySelectorAll('[data-toggle-btn2]');
@@ -254,22 +184,82 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleButtons.forEach((btn) => {
         btn.classList.remove("active");
       });
-
       // Add the "active" class to the clicked button
       button.classList.add("active");
-
       // Move the color slider to the clicked button's position
       const sliderPosition = button.offsetLeft;
       projectToggle.style.setProperty('--slider-left', sliderPosition + 2 + "px");
-
       // Determine the selected category based on the button's text
       const selectedCategory = button.textContent.toLowerCase();
-
       // Call the filterProjects function to display the projects
       filterProjects(selectedCategory);
     });
   });
-
   // Initialize the filter with the default category ("Enterprise")
   filterProjects("enterprise");
+});
+
+
+
+// ------------------------------
+//          BURGER MENU
+// ------------------------------
+
+const toggleButton = document.getElementById('toggle-menu');
+const navListItems = document.querySelectorAll('#navList li');
+const homeSection = document.getElementById('home');
+const burgerIconOpen = document.getElementById('burger-icon-open');
+const closeIcon = document.getElementById('close-icon');
+
+const resetBurgerMenu = () => {
+  navListItems.forEach(item => {
+    item.style.display = 'none';
+  });
+  burgerIconOpen.style.display = 'block';
+  closeIcon.style.display = 'none';
+  homeSection.classList.remove('expanded');
+  toggleButton.checked = false;
+};
+
+toggleButton.addEventListener('click', () => {
+  const isExpanded = homeSection.classList.contains('expanded');
+
+  navListItems.forEach(item => {
+    item.style.display = isExpanded ? 'none' : 'block';
+  });
+
+  if (!isExpanded) {
+    burgerIconOpen.style.display = 'none';
+    closeIcon.style.display = 'block';
+    homeSection.classList.add('expanded');
+  } else {
+    burgerIconOpen.style.display = 'block';
+    closeIcon.style.display = 'none';
+    homeSection.classList.remove('expanded');
+  }
+});
+
+// Adjust navListItems display on window resize
+let isSmallScreen = window.innerWidth < 768;
+
+window.addEventListener('resize', () => {
+  const isNowSmallScreen = window.innerWidth < 768;
+  if (isNowSmallScreen !== isSmallScreen) {
+    if (!toggleButton.checked) {
+      navListItems.forEach(item => {
+        item.style.display = isNowSmallScreen ? 'none' : 'block';
+      });
+    }
+    isSmallScreen = isNowSmallScreen;
+  }
+});
+
+// Close navList and reset burger menu when a nav item is clicked
+navListItems.forEach(item => {
+  item.addEventListener('click', () => {
+    if (window.innerWidth >= 768) {
+      return; // Don't close navList for larger screens
+    }
+    resetBurgerMenu();
+  });
 });

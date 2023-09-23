@@ -1,4 +1,8 @@
 /* Global stYLE */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     overflow-x: hidden;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -20,15 +24,15 @@ body {
 /* Navbar styles */
 #nav-menu {
     display: flex;
+    background-color: #f3f3f3;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #f3f3f3;
+    z-index: 2;
     color: black;
-    z-index: 1000;
 }
 
 .logo img {
@@ -43,7 +47,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
 }
 
 #nav-menu li {
@@ -64,10 +68,44 @@ body {
     font-weight: 500;
 }
 
+/* BURGER MENU */
+#burger-icon {
+    display: none;
+}
+
+#burger-icon label {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#burger-icon-open {
+    color: #f76c5c;
+    font-size: 35px;
+}
+
+#close-icon {
+    color: #f76c5c;
+    display: none;
+    font-size: 45px;
+}
+
+#burger-icon-open:hover,
+#close-icon:hover {
+    color: #19abbb;
+}
+
+#burger-icon input {
+    display: none;
+}
+
 /* Home section styles */
 #home {
-    margin-top: 5rem;
-    padding: 50px 0;
+    padding-top: 80px;
+}
+
+.expanded {
+    margin-top: 29%;
 }
 
 .home-text {
@@ -76,7 +114,7 @@ body {
 }
 
 #job-title {
-    min-width: 450px;
+    min-width: 490px;
     position: relative;
     display: inline-block;
     color: #f76c5c;
@@ -91,13 +129,12 @@ body {
 #socials {
     list-style-type: none;
     display: flex;
-    margin-left: -10.5%;
-    margin-top: 5%;
+    padding: 0%;
 }
 
 #socials li {
     font-size: 2.5rem;
-    padding: 12px;
+    padding: 10px;
 }
 
 #mypic {
@@ -134,12 +171,12 @@ body {
     margin-bottom: 10px;
 }
 
-/* #backend_title {
-    font-size: 30px;
-    line-height: 21px;
-} */
 
 /* About section styles */
+#about {
+    padding: 100px 0;
+}
+
 .container {
     max-width: 960px;
     margin: 0 auto;
@@ -147,8 +184,8 @@ body {
 }
 
 .about-img img {
-    height: 35%;
-    width: 35%;
+    height: 40%;
+    width: 40%;
 }
 
 .about-content {
@@ -166,7 +203,7 @@ button {
 }
 
 .skills {
-    padding-block: 40px;
+    padding-block: 75px;
 }
 
 li {
@@ -357,7 +394,7 @@ a {
 /* Projects section styles */
 
 #projects {
-    padding: 50px 0;
+    padding: 40px 0;
 }
 
 .project-toggle {
@@ -428,49 +465,26 @@ a {
 }
 
 .project-description {
-    /* font-weight: 500; */
-
-    text-align: justify;
-}
-
-.project-photo img {
-    margin-top: 50px;
-    width: 96%;
-}
-
-.project-photo1 img {
-    margin-top: 80px;
-    width: 100%;
-}
-
-.project-photo2 img {
-    margin-top: 50px;
-    width: 100%;
+    text-align: center;
 }
 
 .project-card:hover {
     box-shadow: #f76c5c 5px 5px 5px;
-    /* background-color: whitesmoke; */
 }
 
-.project-logo {
-    mix-blend-mode: normal;
-    height: 100px;
-    margin-left: 26%;
-}
-
-.project-logo2 {
-    height: 100px;
-    margin-left: 38%;
-
+.project-photo2 {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
 }
 
 .project-links {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .project-links * {
+    margin: 0 10px;
     font-size: 23px;
     font-weight: 600;
 }
@@ -488,6 +502,7 @@ a {
 }
 
 .project-tech-stack {
+    text-align: center;
     font-size: 15px;
     font-weight: 700;
 }
@@ -495,8 +510,6 @@ a {
 /* Contact section styles */
 #contact {
     text-align: center;
-    padding: 50px 0;
-    /* background-color: #f9f9f9; */
 }
 
 .container {
@@ -525,8 +538,6 @@ a {
     margin-right: 20px;
     font-size: 2.5rem;
 }
-
-
 
 /* Resume section styles */
 #resume {
@@ -588,7 +599,6 @@ a {
 footer {
     margin-top: 140px;
     position: relative;
-    /* width: 100%; */
     background-color: #f76c5c;
     border: 1px solid #f76c5c;
     min-height: 100px;
@@ -639,7 +649,7 @@ footer .wave {
     top: -100px;
     left: 0;
     height: 100px;
-    width: 100%;
+    width: 100.1%;
     background: url(https://cdn.discordapp.com/attachments/1128079625818480751/1149908323102105641/wave-removebg-preview.png);
     background-size: 1000px 120px;
 }
@@ -697,7 +707,7 @@ footer .wave#wave4 {
 \*-----------------------------------*/
 
 .go-top {
-    background-color: #f76c5c;
+    background-color: #f55f4e;
     border-radius: 50%;
     color: white;
     width: 50px;
@@ -798,6 +808,11 @@ body.dark-mode {
     color: #f76c5c;
 }
 
+.dark-mode #navList li {
+
+    background-color: #000000;
+}
+
 .dark-mode #nav-menu li a {
     color: #fff;
 }
@@ -872,7 +887,7 @@ body.dark-mode {
 }
 
 .dark-mode #contact {
-    background-color: rgb(30, 41, 59);
+    background-color: #f76c5c;
 }
 
 .white {
@@ -882,218 +897,164 @@ body.dark-mode {
 /*-----------------------------------*\
  * #RESPONSIVE STYLES
 \*-----------------------------------*/
-@media all and (min-width: 768px) and (max-width:1028px) {
 
-    body {
-        max-width: 768px;
+@media (min-width:1028px) {
+    .github {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+}
+
+@media all and (min-width: 768px) and (max-width:1028px) {
+    #navList li {
+        display: block;
+    }
+
+    #nav-menu {
+        flex: 1;
+    }
+
+    .skills {
+        margin: auto;
+        display: grid;
+        grid-template-columns: 3fr 6fr;
+        align-items: center;
+        gap: 50px;
+    }
+
+    #projects {
+        margin: auto;
+    }
+
+    .container div {
+        margin: auto;
+    }
+
+    .github {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #burger-icon {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #burger-icon label {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    #nav-menu {
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+    }
+
+    #navList {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        top: 100%;
+        padding: 0 10px;
+        width: 100%;
+        align-items: center;
+    }
+
+    #navList li {
+        gap: 0;
+        background-color: #f3f3f3;
+        display: none;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    #nav-menu li a {
+        font-size: 16px;
+    }
+
+    .github {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 725px) {
+    #nav-menu {
+        flex: 1;
+    }
+
+    #navList li {
+        width: 100%;
+        background-color: #f55f4e;
     }
 
     .home-text {
-        /* border: 1px solid red; */
-    }
-
-    .about-content {
-        /* border: 1px solid red; */
-    }
-
-    .skills {
-        margin: auto;
-        /* border: 1px solid red; */
-        width: 95%;
-        display: grid;
-        grid-template-columns: 3fr 6fr;
+        flex-direction: column;
         align-items: center;
-        gap: 50px;
-    }
-
-    #projects {
-        /* border: 1px solid red; */
-        width: 95%;
-        margin: auto;
-    }
-
-    .container div {
-        margin: auto;
-        /* border: 1px solid darkblue; */
-    }
-
-    /* Github section styles */
-    .github {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    footer {
-        max-width: 182%;
-    }
-}
-
-@media all and (min-width: 425px) and (max-width:1028px) {
-    body {
-        max-width: 425px;
-    }
-
-    #home {
-        width: 208%;
-        margin-top: 25%;
-        /* border: 1px solid red; */
-    }
-
-    #about {
-        width: 208%;
-        /* border: 1px solid red; */
-    }
-
-    .skills {
-        margin: auto;
-        /* border: 1px solid red; */
-        width: 208%;
-        display: grid;
-        grid-template-columns: 3fr 6fr;
-        align-items: center;
-        gap: 50px;
-    }
-
-    #projects {
-        /* border: 1px solid red; */
-        width: 208%;
-        margin: auto;
-    }
-
-    .container div {
-        margin: auto;
-        /* width: 100%/; */
-        /* border: 1px solid darkblue; */
-    }
-
-
-    #github {
-        margin: auto;
-        width: 208%;
-        /* border: 1px solid darkblue; */
-    }
-
-    .github {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    footer {
-        width: 185%;
-    }
-}
-
-@media all and (min-width: 375px) and (max-width:1028px) {
-    body {
-        max-width: 425px;
-    }
-
-    #home {
-        width: 208%;
-        margin-top: 25%;
-
-    }
-
-    #about {
-        width: 208%;
-
-    }
-
-    .skills {
-        margin: auto;
-
-        width: 208%;
-        display: grid;
-        grid-template-columns: 3fr 6fr;
-        align-items: center;
-        gap: 50px;
-    }
-
-    #projects {
-
-        width: 208%;
-        margin: auto;
-    }
-
-    .container div {
-        margin: auto;
-
-    }
-
-
-    #github {
-        margin: auto;
-        width: 208%;
-
-    }
-
-    .github {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    footer {
-        width: 185%;
-    }
-}
-
-@media all and (min-width: 320px) and (max-width:1028px) {
-    body {
-        width: 102%;
-    }
-
-    .logo img {
-        width: 40px;
-        height: 40px;
-    }
-
-    #home {
-        width: 205%;
-    }
-
-    .home-text>div:nth-child(1) {
-        margin-left: 0%;
     }
 
     #mypic {
-        position: absolute;
-        margin-left: 140%;
+        order: -1;
+        width: 100%;
+        height: auto;
     }
 
-    #about {
-        width: 205%;
+    .home-text div:first-child {
+        width: 100%;
+    }
+
+    #nav-menu li {
+        padding: 5px 0;
+    }
+
+    #nav-menu li a {
+        font-size: 16px;
+    }
+
+    #job-title {
+        display: inline;
+    }
+
+    #job-title span {
+        font-size: 16px;
+        line-height: 20px;
     }
 
     .skills {
-        margin: auto;
-        width: 205%;
-        display: grid;
-        grid-template-columns: 3fr 6fr;
-        align-items: center;
-        gap: 50px;
+        display: flex;
+        flex-direction: column;
     }
 
-    #projects {
-        width: 205%;
-        margin: auto;
+    .skills-list {
+        margin-left: -10%;
     }
 
-    .container div {
-        margin: auto;
+    .tools-list {
+        margin-left: -10%;
     }
 
+}
+
+@media (max-width: 515px) {
     #github {
         margin: auto;
-        width: 205%;
-
     }
 
-    .github {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    footer {
-        width: 175%;
+    #github-streak-stats,
+    #github-stats-card,
+    #github-top-langs {
+        width: 98%;
     }
 }
