@@ -394,7 +394,7 @@ a {
 /* Projects section styles */
 
 #projects {
-    padding: 40px 0;
+    padding: 90px 0;
 }
 
 .project-toggle {
@@ -1002,6 +1002,10 @@ body.dark-mode {
     .github {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .project-card {
+        margin: 0 auto;
     }
 
     #DARKMOE {
