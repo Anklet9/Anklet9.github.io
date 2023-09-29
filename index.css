@@ -137,6 +137,12 @@ body {
     padding: 10px;
 }
 
+#socials li a {
+    color: #f76c5c;
+}
+#socials li a:hover {
+    color: #19abbb;
+}
 #mypic {
     text-align: center;
     padding-top: 10px;
@@ -808,6 +814,10 @@ body.dark-mode {
     color: #f76c5c;
 }
 
+.dark-mode #socials li a:hover {
+    color: white;
+}
+
 .dark-mode #navList li {
 
     background-color: #000000;
@@ -888,6 +898,11 @@ body.dark-mode {
 
 .dark-mode #contact {
     background-color: #f76c5c;
+}
+
+.dark-mode .project-deployed-link:hover,
+.dark-mode .project-github-link:hover {
+    color: white;
 }
 
 .white {
