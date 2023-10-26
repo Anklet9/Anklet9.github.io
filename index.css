@@ -483,6 +483,11 @@ a {
     width: 50%;
     margin: 0 auto;
 }
+.project-photo2:hover{
+
+  margin-top: 0;
+  transform: scale(1.05);
+}
 
 .project-links {
     display: flex;
