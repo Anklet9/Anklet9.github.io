@@ -10,7 +10,7 @@ cursorElement.textContent = '|';
 jobTitleElement.appendChild(cursorElement);
 const jobTitles = [
   'NIKET SENGAR.',
-  'n Aspiring Java Backend Developer.'
+  'N ASPIRING JAVA BACKEND DEVELOPER.'
 ];
 let currentIndex = 0;
 
@@ -240,10 +240,10 @@ toggleButton.addEventListener('click', () => {
 });
 
 // Adjust navListItems display on window resize
-let isSmallScreen = window.innerWidth < 768;
+let isSmallScreen = window.innerWidth < 953;
 
 window.addEventListener('resize', () => {
-  const isNowSmallScreen = window.innerWidth < 768;
+  const isNowSmallScreen = window.innerWidth < 953;
   if (isNowSmallScreen !== isSmallScreen) {
     if (!toggleButton.checked) {
       navListItems.forEach(item => {
@@ -263,3 +263,45 @@ navListItems.forEach(item => {
     resetBurgerMenu();
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function checkVisibility() {
+//   const elementsToAnimate = document.querySelectorAll('#skills , .project-card , .github ,#home,#about');
+
+//   elementsToAnimate.forEach((element) => {
+//     const elementTop = element.getBoundingClientRect().top;
+//     const elementBottom = element.getBoundingClientRect().bottom;
+//     const windowHeight = window.innerHeight;
+
+//     // Check if element is in the viewport or slightly above/below
+//     if (elementTop < windowHeight - 100 && elementBottom > 0) {
+//       element.style.opacity = '1';
+//       element.style.transform = 'translateY(0)';
+//     } else {
+//       element.style.opacity = '0';
+//       element.style.transform = 'translateY(40px)';
+//     }
+//   });
+// }
+
+// // Event listener for scrolling
+// window.addEventListener('scroll', checkVisibility);
+
+// // Initial check when the page loads
+// checkVisibility();
+
+
+
+
+
