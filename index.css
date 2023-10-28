@@ -107,7 +107,7 @@ body {
 
 /* Home section styles */
 #home {
-  padding-top: 120px;
+  padding-top: 140px;
 }
 
 .expanded {
@@ -150,12 +150,8 @@ body {
   color: #19abbb;
 }
 #mypic {
-  text-align: center;
-  padding-top: 10px;
-  padding-right: 20px;
+    text-align: center;
 }
-
-
 
 .profile {
   display: flex;
@@ -164,11 +160,12 @@ body {
 }
 
 .home-img {
-  width: 190px;
-  height: 190px;
+  mix-blend-mode: multiply;
+  width: 205px;
+  height: 240px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 20px;
+  margin-top: -50px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -951,7 +948,7 @@ body.dark-mode {
     display: block;
     position: fixed;
     right: 0px;
-    top: 5%;
+    top: 4.7%;
     transform: translateY(-50%);
   }
 
