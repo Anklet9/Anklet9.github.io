@@ -160,7 +160,8 @@ body {
 }
 
 .home-img {
-  width: 200px;
+  mix-blend-mode: multiply;
+  width: 205px;
   height: 240px;
   border-radius: 50%;
   object-fit: cover;
@@ -819,8 +820,6 @@ body.dark-mode {
 }
 
 .dark-mode #nav-menu li a:hover {
-  background-color: whitesmoke;
-  font-weight: 500;
   color: #f76c5c;
 }
 
