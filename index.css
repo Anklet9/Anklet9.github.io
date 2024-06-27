@@ -491,7 +491,12 @@ a {
 .project-card:hover {
   box-shadow: #f76c5c 5px 5px 5px;
 }
-
+.project-photo1 {
+  display: block;
+  width: 30%;
+  height: 45%;
+  margin: 0 auto;
+}
 .project-photo2 {
   display: block;
   width: 50%;
@@ -670,7 +675,7 @@ footer .wave {
   left: 0;
   height: 100px;
   width: 100.1%;
-  background: url(https://cdn.discordapp.com/attachments/1128079625818480751/1149908323102105641/wave-removebg-preview.png?ex=6657f194&is=6656a014&hm=68fd3299448a5ddf4dc98f5fc3876d343da31fa8590469ae437baec0e60051e7&);
+  background-image: url(Icons/wave-removebg-preview.png);
   background-size: 1000px 120px;
 }
 
